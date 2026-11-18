@@ -871,6 +871,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     addEventListener('scroll', scrollFx, { passive:true });
     addEventListener('resize', scrollFx);
     if (lenis) lenis.on('scroll', scrollFx);
+    setInterval(scrollFx, 500);   // keeps everything in sync even when the browser throttles frames
     scrollFx();
 
     const WORDS = ['PALUGADA','SUDAH ADA YANG PUNYA','NO TEMPLATE','PIXEL PERFECT','STOP SCROLLING','ON BRAND','BIKIN NAGIH','EYE CANDY','LAYER BY LAYER','IDE MAHAL','MADE TO SELL','CTRL + S'];
