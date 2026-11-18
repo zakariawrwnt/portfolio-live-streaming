@@ -106,6 +106,21 @@ section{position:relative}
 .title{font-size:clamp(28px,3.6vw,44px);text-align:center;letter-spacing:-.025em}
 .lead{color:var(--dim);text-align:center;max-width:34em;margin:16px auto 0;font-size:17px}
 
+/* hero intro + facts */
+.intro{display:inline-flex;align-items:center;gap:10px;padding:6px 16px 6px 6px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px var(--line-2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:14px;color:var(--dim);margin-bottom:26px;max-width:100%;text-align:left}
+.intro b{color:#fff;font-weight:500}
+.intro .live{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;background:#E5243B;color:#fff;font-weight:600;font-size:11px;letter-spacing:.08em;padding:4px 9px;border-radius:999px}
+.intro .live i{width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.25}}
+.facts{display:flex;gap:44px;flex-wrap:wrap;justify-content:center;margin-top:52px}
+.facts div{font-size:14px;color:var(--faint);text-align:center}
+.facts strong{display:block;font-size:34px;font-weight:500;color:#fff;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+
+/* floating creative words over the wall */
+.words{position:absolute;inset:0;pointer-events:none;z-index:1}
+.words span{position:absolute;font-size:12px;font-weight:600;letter-spacing:.14em;color:#fff;background:rgba(47,107,255,.85);padding:7px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 24px rgba(47,107,255,.45);opacity:0}
+.veil .wsub{color:var(--dim);max-width:30em;margin:18px auto 0;font-size:17px;text-shadow:0 2px 20px rgba(0,0,0,.9)}
+
 /* problems */
 .probs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;max-width:900px;margin:64px auto 0;text-align:center}
 .prob{display:flex;flex-direction:column;align-items:center;gap:18px;color:var(--dim);font-size:16px;line-height:1.45}
@@ -122,7 +137,7 @@ section{position:relative}
 @keyframes slideR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 .wall .veil{position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 50%,rgba(1,1,3,.78),rgba(1,1,3,.35) 70%,transparent),linear-gradient(90deg,var(--black),transparent 12%,transparent 88%,var(--black));display:grid;place-items:center;text-align:center;pointer-events:none}
 .veil .pill{display:inline-block;padding:8px 18px;border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:15px;color:var(--dim);margin-bottom:14px}
-.veil h2{font-size:clamp(38px,6.4vw,84px);font-weight:500;letter-spacing:-.04em;text-shadow:0 6px 40px rgba(0,0,0,.7)}
+.veil h2{max-width:14em;margin:0 auto;font-size:clamp(34px,5.4vw,72px);font-weight:500;letter-spacing:-.04em;text-shadow:0 6px 40px rgba(0,0,0,.7)}
 
 /* logos */
 .logos{padding-block:70px 30px}
@@ -154,8 +169,23 @@ section{position:relative}
 .meta .brand img{height:22px;width:auto}
 .meta h3{font-size:clamp(22px,2.6vw,32px);letter-spacing:-.02em}
 .meta .count{font-size:14px;color:var(--faint)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tags span{font-size:12px;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.1);color:#E6ECFF;backdrop-filter:blur(6px)}
 .meta .open{margin-top:10px;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;height:38px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);font-size:14px}
 .card:hover .open{background:var(--white);color:#000}
+.search{position:relative;width:min(360px,100%);margin:16px auto 0}
+.search input{width:100%;height:44px;border-radius:999px;border:0;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px var(--line-2);color:#fff;font:400 15px var(--sans);padding:0 18px 0 44px}
+.search input::placeholder{color:var(--faint)}
+.search input:focus{outline:none;box-shadow:inset 0 0 0 1px var(--blue-hi)}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--faint)}
+/* project results */
+.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.res{background:var(--panel);border-radius:18px;box-shadow:0 0 0 1px var(--line);padding:20px;display:flex;flex-direction:column;gap:10px}
+.res h3{font-size:17px;font-weight:500}
+.res dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:14px}
+.res dt{color:var(--faint)}
+.res dd{margin:0;color:#E6ECFF}
+.res ul{margin:4px 0 0;padding-left:18px;color:var(--dim);font-size:14px;display:flex;flex-direction:column;gap:4px}
 .empty{text-align:center;color:var(--faint);padding:40px 0}
 .empty strong{display:block;color:#fff;font-size:20px;font-weight:500}
 
@@ -190,6 +220,14 @@ section{position:relative}
 .pills{display:flex;flex-wrap:wrap;gap:8px}
 .pills span{font-size:15px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px var(--line)}
 .pills.main span{background:var(--blue);box-shadow:none}
+.clientlogos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.clientlogos span{height:72px;border-radius:14px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center;padding:14px}
+.clientlogos img{max-height:26px;max-width:100%;width:auto;opacity:.85}
+.clientlogos img.sq{max-height:40px}
+.sig{margin-top:30px;display:flex;align-items:center;gap:14px}
+.sig .appicon{width:48px;height:48px;border-radius:14px}
+.sig b{display:block;font-weight:500;font-size:18px}
+.sig small{color:var(--faint);font-size:14px}
 
 /* faq */
 .faq{max-width:760px;margin:48px auto 0;display:flex;flex-direction:column;gap:10px}
@@ -261,13 +299,17 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
   .fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .fbrand{grid-column:1/-1}
   .card .meta{right:42%}
+  .results{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:640px){
   .sec{padding-block:80px}
   .probs{grid-template-columns:minmax(0,1fr);gap:34px}
   .flist{grid-template-columns:minmax(0,1fr)}
   .mock{grid-template-columns:minmax(0,1fr);justify-items:center;padding:20px}
-  .card{height:440px}
+  .card{height:520px}
+  .clientlogos{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts{gap:26px}
+  .intro{font-size:13px}
   .card .phone{right:50%;top:22px;transform:translateX(50%) rotate(3deg);height:58%}
   .card:hover .phone{transform:translateX(50%) rotate(0) scale(1.03)}
   .card .meta{right:20px}
@@ -319,11 +361,17 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
       <span class="appicon bigicon" data-pop aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><circle cx="12" cy="7" r="1.3" fill="currentColor" stroke="none"/><path d="M9 15.5h6"/></svg>
       </span>
+      <p class="intro" data-pop><span class="live"><i></i>LIVE</span><span><b>Hi, I’m Zakaria Wirawanto.</b> Graphic designer crafting visuals that help brands look sharp, stay consistent and get noticed.</span></p>
       <h1 id="h1" data-pop>Portfolio live streaming <em class="s">frames</em> that make your brand stand out</h1>
       <p class="sub" data-pop>Give your live stream a professional look with custom frames that highlight your products, keep promotions clear, and reflect your brand’s identity.</p>
       <div class="btns" data-pop>
         <a class="btn btn-w" href="#work">View my work</a>
         <a class="btn btn-g" href="#contact">Get in touch</a>
+      </div>
+      <div class="facts" data-pop>
+        <div><strong>10+</strong>brands designed for</div>
+        <div><strong>9:16</strong>vertical, made for live apps</div>
+        <div><strong>3</strong>live frames in this portfolio</div>
       </div>
     </div>
   </section>
@@ -355,10 +403,12 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     <div class="row r-left" data-wall></div>
     <div class="row r-right" data-wall></div>
     <div class="row r-left" data-wall style="animation-duration:75s"></div>
+    <div class="words" id="words" aria-hidden="true"></div>
     <div class="veil">
-      <div>
+      <div class="wrap">
         <span class="pill" data-rv>Not anymore</span>
-        <h2 id="t-meet" data-rv>Frames that sell.</h2>
+        <h2 id="t-meet" data-rv>Frames that sell, one live stream at a time.</h2>
+        <p class="wsub" data-rv>Every design starts with your brand and ends with visuals that communicate clearly, look polished and leave a lasting impression.</p>
       </div>
     </div>
   </section>
@@ -388,38 +438,63 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
         <button class="chip" data-filter="viva" aria-pressed="false">VIVA Cosmetics</button>
         <button class="chip" data-filter="reda" aria-pressed="false">Red-A</button>
       </div>
+      <label class="search" for="q" data-rv>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search: payday, 11.11, price card…" autocomplete="off" aria-label="Search frames">
+      </label>
       <div class="stack">
-        <button class="card" data-open="1" data-brand="viva" data-rv aria-label="Watch VIVA Cosmetics Payday drive frame">
+        <button class="card" data-open="1" data-brand="viva" data-kw="viva cosmetics payday november 2026 car convertible paket kulit selembut mawar 149k bundle animated" data-rv aria-label="Watch VIVA Cosmetics Payday drive frame">
           <span class="bg" style="background-image:url(media/tiles/viva-payday-11.jpg)"></span>
           <span class="phone"><img src="media/viva-payday.jpg" alt="" loading="lazy"><video data-key="viva-payday" muted loop playsinline preload="none"></video></span>
           <span class="meta">
             <span class="brand"><img src="media/logos/viva.png" alt="">VIVA Cosmetics · Payday, November 2026</span>
             <h3>Payday drive frame</h3>
-            <span class="count">Animated convertible scene with floating products and a 149K bundle card.</span>
+            <span class="count">The host sits in an animated red convertible on a bright city road, with floating products and one bundle card, “Paket Kulit Selembut Mawar”, held at the top.</span>
+            <span class="tags"><span>Payday sale</span><span>Animated scene</span><span>Bundle 149K</span></span>
             <span class="open">▶ Watch preview · 0:19</span>
           </span>
         </button>
-        <button class="card" data-open="0" data-brand="viva" data-rv aria-label="Watch VIVA Cosmetics Hari Pahlawan frame">
+        <button class="card" data-open="0" data-brand="viva" data-kw="viva cosmetics hari pahlawan heroes day merdeka kulit kusam skin food cream laila cleanser 58k 53k price card shelf" data-rv aria-label="Watch VIVA Cosmetics Hari Pahlawan frame">
           <span class="bg" style="background-image:url(media/tiles/viva-frame-1-11.jpg)"></span>
           <span class="phone"><img src="media/viva-frame-1.jpg" alt="" loading="lazy"><video data-key="viva-frame-1" muted loop playsinline preload="none"></video></span>
           <span class="meta">
             <span class="brand"><img src="media/logos/viva.png" alt="">VIVA Cosmetics · Hari Pahlawan</span>
             <h3>“Merdeka Dari Kulit Kusam” frame</h3>
-            <span class="count">Pink studio set with a product shelf and two price cards that stay visible all session.</span>
+            <span class="count">A pink studio set with a product shelf, a hero tube on the left and two price cards, so Skin Food Cream and the Laila Cleanser bundle stay visible the whole session.</span>
+            <span class="tags"><span>Heroes’ Day sale</span><span>Product shelf</span><span>2 price cards</span></span>
             <span class="open">▶ Watch preview · 0:10</span>
           </span>
         </button>
-        <button class="card" data-open="2" data-brand="reda" data-rv aria-label="Watch Red-A 11.11 Beauty Flash Sale frame">
+        <button class="card" data-open="2" data-brand="reda" data-kw="red-a reda 11.11 beauty flash sale compact powder facial foam bebas ongkir halal bpom trust" data-rv aria-label="Watch Red-A 11.11 Beauty Flash Sale frame">
           <span class="bg" style="background-image:url(media/tiles/reda-1111-01.jpg)"></span>
           <span class="phone"><img src="media/reda-1111.jpg" alt="" loading="lazy"><video data-key="reda-1111" muted loop playsinline preload="none"></video></span>
           <span class="meta">
             <span class="brand"><img src="media/logos/red-a.png" alt="">Red-A · 11.11 Beauty Series</span>
             <h3>11.11 Beauty Flash Sale frame</h3>
-            <span class="count">Red boutique counter lined with compact powders, a side product video and a trust bar.</span>
+            <span class="count">A red boutique counter lined with compact powders, a looping product video on the side wall and a trust bar for free shipping, halal, extra promo and BPOM.</span>
+            <span class="tags"><span>11.11 sale</span><span>Product counter</span><span>Trust badges</span></span>
             <span class="open">▶ Watch preview · 0:35</span>
           </span>
         </button>
-        <div class="empty" id="empty" hidden><strong>No frames for this brand yet</strong>Pick All frames to see everything.</div>
+        <div class="empty" id="empty" hidden><strong>No frames match that search</strong>Try “VIVA”, “Red-A”, “payday” or “11.11”, or pick All frames.</div>
+      </div>
+      <h3 class="sr">What was delivered per project</h3>
+      <div class="results">
+        <div class="res" data-rv>
+          <h3>VIVA Cosmetics · Payday</h3>
+          <dl><dt>Campaign</dt><dd>Payday, November 2026</dd><dt>Format</dt><dd>9:16 animated live frame</dd></dl>
+          <ul><li>Animated convertible scene for the host</li><li>Floating product animation</li><li>Bundle price card “Paket Kulit Selembut Mawar”</li></ul>
+        </div>
+        <div class="res" data-rv>
+          <h3>VIVA Cosmetics · Hari Pahlawan</h3>
+          <dl><dt>Campaign</dt><dd>“Merdeka Dari Kulit Kusam”</dd><dt>Format</dt><dd>9:16 live frame</dd></dl>
+          <ul><li>Pink studio set with product shelf</li><li>Hero product tube placement</li><li>Two price cards for Skin Food Cream and Laila Cleanser</li></ul>
+        </div>
+        <div class="res" data-rv>
+          <h3>Red-A · 11.11 Beauty Series</h3>
+          <dl><dt>Campaign</dt><dd>11.11 Beauty Flash Sale</dd><dt>Format</dt><dd>9:16 live frame with motion</dd></dl>
+          <ul><li>Boutique counter lined with compact powders</li><li>Looping product video on the side wall</li><li>Trust bar: free shipping, halal, extra promo, BPOM</li></ul>
+        </div>
       </div>
     </div>
   </section>
@@ -461,10 +536,24 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
         <h2 id="t-about" data-rv>A designer for the <em class="s">vertical</em> screen</h2>
         <p class="big" data-rv>I’m Zakaria Wirawanto, a graphic designer specializing in live streaming frame design. I create visuals that balance the host, products, and promotional messages, helping your brand make the most of every screen.</p>
         <p data-rv>A live frame works for hours on a small phone screen while the host moves and talks. I design for that: clear space for the host, products where viewers look first, and prices that stay readable from the first minute to the last.</p>
+        <div class="sig" data-rv>
+          <span class="appicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><circle cx="12" cy="7" r="1.3" fill="currentColor" stroke="none"/><path d="M9 15.5h6"/></svg></span>
+          <div><b>Zakaria Wirawanto</b><small>Graphic designer, live streaming frames</small></div>
+        </div>
       </div>
       <div class="exp">
         <div data-rv><h3>Live streaming design projects</h3><div class="pills main"><span>Fav Beauty</span><span>VIVA Cosmetics</span><span>Red-A</span><span>PT Ultra Sakti</span></div></div>
         <div data-rv><h3>Brand work</h3><div class="pills"><span>FreshCare</span><span>Madu TJ</span><span>Maywell</span><span>Hotin Cream</span><span>Secret Garden</span><span>Bebio</span><span>and more</span></div></div>
+        <div data-rv><h3>Clients</h3><div class="clientlogos">
+          <span><img class="sq" src="media/logos/viva.png" alt="VIVA Cosmetics"></span>
+          <span><img src="media/logos/red-a.png" alt="Red-A"></span>
+          <span><img src="media/logos/ultra-sakti.png" alt="PT Ultra Sakti"></span>
+          <span><img class="sq" src="media/logos/fresh-living.png" alt="Fresh Living by FreshCare"></span>
+          <span><img src="media/logos/madu-tj.png" alt="Madu TJ"></span>
+          <span><img class="sq" src="media/logos/hotin-cream.png" alt="Hotin Cream"></span>
+          <span><img src="media/logos/mywell.png" alt="MyWell"></span>
+          <span><img src="media/logos/welmove.png" alt="Welmove"></span>
+        </div></div>
       </div>
     </div>
   </section>
@@ -595,6 +684,12 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     const html = set.map(t => `<img src="media/tiles/${t}.jpg" alt="" loading="lazy">`).join('');
     row.innerHTML = html + html;   // doubled so the slide loops seamlessly
   });
+  // floating creative words over the wall
+  const WORDS = ['PALUGADA','SUDAH ADA YANG PUNYA','NO TEMPLATE','PIXEL PERFECT','STOP SCROLLING','ON BRAND','BIKIN NAGIH','EYE CANDY','LAYER BY LAYER','IDE MAHAL','MADE TO SELL','CTRL + S'];
+  const wordsBox = $('#words');
+  WORDS.forEach((w,i) => { const sp = document.createElement('span'); sp.textContent = w;
+    sp.style.left = (4 + (i*29) % 78) + '%'; sp.style.top = (8 + (i*37) % 80) + '%';
+    if (!go) sp.style.opacity = i % 3 === 0 ? .9 : 0; wordsBox.appendChild(sp); });
   // logo strip loop
   const track = $('#track');
   track.innerHTML += track.innerHTML.replace(/alt="[^"]*"/g, 'alt="" aria-hidden="true"');
@@ -620,6 +715,14 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     addEventListener('load', () => setTimeout(() => {
       $$('.pre').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) el.classList.remove('pre'); });
     }, 1200));
+
+    // creative words pop in and out over the tile wall
+    M.inView('#wall', () => {
+      const ctrls = $$('#words span').map((sp,i) => M.animate(sp,
+        { opacity:[0,1,1,0], scale:[.6,1.08,1,.9], filter:['blur(8px)','blur(0px)','blur(0px)','blur(6px)'], y:[10,0,-6,-14] },
+        { duration:3.2, delay:i*.55, repeat:Infinity, repeatDelay:WORDS.length*.55-3.2+.4, ease:'easeInOut' }));
+      return () => ctrls.forEach(c => c.stop());
+    }, { amount:.2 });
 
     // scroll progress + the wall drifts slightly with scroll
     M.scroll(M.animate('#progress', { scaleX:[0,1] }, { ease:'linear' }));
@@ -647,17 +750,20 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     c.addEventListener('focus', start); c.addEventListener('blur', stop);
   });
 
-  /* ---------- filters ---------- */
-  const chips = $$('.chip'), cards = $$('.card'), empty = $('#empty');
-  chips.forEach(ch => ch.addEventListener('click', () => {
-    const f = ch.dataset.filter; let n = 0;
-    chips.forEach(x => x.setAttribute('aria-pressed', String(x === ch)));
+  /* ---------- filters + search ---------- */
+  const chips = $$('.chip'), cards = $$('.card'), empty = $('#empty'), q = $('#q');
+  let filter = 'all';
+  function apply(){
+    const term = q.value.trim().toLowerCase(); let n = 0;
     cards.forEach(c => {
-      const on = f === 'all' || c.dataset.brand === f; c.hidden = !on; c.classList.remove('pre');
+      const on = (filter === 'all' || c.dataset.brand === filter) && (!term || (c.dataset.kw + ' ' + c.textContent).toLowerCase().includes(term));
+      c.hidden = !on; c.classList.remove('pre');
       if (on){ n++; if (go) M.animate(c, { opacity:[0,1], filter:['blur(10px)','blur(0px)'], scale:[.97,1] }, { duration:.6, ease }); }
     });
     empty.hidden = n !== 0;
-  }));
+  }
+  chips.forEach(ch => ch.addEventListener('click', () => { filter = ch.dataset.filter; chips.forEach(x => x.setAttribute('aria-pressed', String(x === ch))); apply(); }));
+  q.addEventListener('input', apply);
 
   /* ---------- menu ---------- */
   const menu = $('#menu');
