@@ -1,0 +1,11 @@
+# Netlify: situs statis, tanpa proses build.
+# Setiap push ke branch main otomatis di-deploy setelah repo ini dihubungkan ke Netlify.
+[build]
+  publish = "."
+  command = ""
+
+# Video, gambar dan logo disimpan di cache browser 1 hari supaya kunjungan berikutnya lebih cepat.
+[[headers]]
+  for = "/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

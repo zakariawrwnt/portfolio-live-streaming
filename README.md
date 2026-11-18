@@ -6,4 +6,6 @@ Website portfolio frame live streaming: VIVA Cosmetics, Red-A, dan brand lainnya
 - `media/`: video frame, klip preview, poster, dan logo brand
 - Alamat video diatur di blok `VIDEO SOURCES` di dalam `index.html`
 
-Deploy: folder ini bisa langsung dipakai di Netlify (drag & drop atau hubungkan repo GitHub, tanpa build command, publish directory `.`).
+## Auto deploy
+
+Repo ini terhubung ke Netlify. Setiap push ke branch `main` otomatis tayang. Pengaturannya ada di `netlify.toml` (tanpa build command, publish directory `.`).
