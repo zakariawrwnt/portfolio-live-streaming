@@ -848,18 +848,30 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     queue();
 
     M.animate('.nav', { opacity:[0,1], y:[-20,0] }, { duration:.8, ease });
-    M.scroll(M.animate('#progress', { scaleX:[0,1] }, { ease:'linear' }));
-    // meet title shrinks 1.1 → 1 while the section scrolls through, like the reference
-    M.scroll(M.animate('#t-meet', { scale:[1.1,1] }, { ease:'linear' }), { target: $('#meet'), offset:['start end','end start'] });
-    // the two title lines slide in opposite directions with the scroll
-    M.scroll(M.animate('#ml1', { x:['14%','-10%'] }, { ease:'linear' }), { target: $('#meet'), offset:['start end','end start'] });
-    M.scroll(M.animate('#ml2', { x:['-14%','10%'] }, { ease:'linear' }), { target: $('#meet'), offset:['start end','end start'] });
-
-    // problems: grows into place while scrolling in, then shrinks and fades as it scrolls out (reverses when scrolling up)
-    M.scroll(M.animate('#prob-wrap', {
-        opacity:[0,1,1,0], scale:[.82,1,1,.78], filter:['blur(12px)','blur(0px)','blur(0px)','blur(10px)'], y:[60,0,0,-40]
-      }, { ease:'linear', times:[0,.38,.62,1] }), { target: $('#problems'), offset:['start end','end start'] });
-    $$('.prob').forEach((el,i) => M.scroll(M.animate(el, { y:[40 + i*30, 0, 0, -20 - i*20] }, { ease:'linear', times:[0,.4,.6,1] }), { target: $('#problems'), offset:['start end','end start'] }));
+    /* scroll-linked effects, computed directly from scroll position (works with Lenis and on every browser) */
+    const clamp = (v,a=0,b=1) => Math.min(b, Math.max(a, v));
+    const lerpKF = (p, times, vals) => { for (let i=1;i<times.length;i++){ if (p <= times[i]){ const t = (p - times[i-1]) / (times[i] - times[i-1] || 1); return vals[i-1] + (vals[i]-vals[i-1]) * t; } } return vals[vals.length-1]; };
+    const prog = el => { const r = el.getBoundingClientRect(); return clamp((innerHeight - r.top) / (innerHeight + r.height)); };   // 0 = top edge enters from below, 1 = bottom edge leaves at top
+    const pbar = $('#progress'), probSec = $('#problems'), probWrap = $('#prob-wrap'), probs = $$('.prob'), meet = $('#meet'), tMeet = $('#t-meet'), ml1 = $('#ml1'), ml2 = $('#ml2');
+    const T4 = [0,.38,.62,1];
+    const scrollFx = () => {
+      const h = document.documentElement; pbar.style.transform = `scaleX(${clamp(scrollY / (h.scrollHeight - innerHeight))})`;
+      // problems: grows in, holds, then shrinks + fades out; reverses when scrolling up
+      const p = prog(probSec);
+      probWrap.style.opacity = lerpKF(p, T4, [0,1,1,0]);
+      probWrap.style.transform = `translateY(${lerpKF(p, T4, [60,0,0,-40])}px) scale(${lerpKF(p, T4, [.82,1,1,.78])})`;
+      probWrap.style.filter = `blur(${lerpKF(p, T4, [12,0,0,10])}px)`;
+      probs.forEach((el,i) => { el.style.transform = `translateY(${lerpKF(p, [0,.4,.6,1], [40 + i*30, 0, 0, -20 - i*20])}px)`; });
+      // meet title: shrinks 1.1 → 1, lines slide in opposite directions
+      const m = prog(meet);
+      tMeet.style.transform = `scale(${1.1 - .1*m})`;
+      ml1.style.transform = `translateX(${14 - 24*m}%)`;
+      ml2.style.transform = `translateX(${-14 + 24*m}%)`;
+    };
+    addEventListener('scroll', scrollFx, { passive:true });
+    addEventListener('resize', scrollFx);
+    if (lenis) lenis.on('scroll', scrollFx);
+    scrollFx();
 
     const WORDS = ['PALUGADA','SUDAH ADA YANG PUNYA','NO TEMPLATE','PIXEL PERFECT','STOP SCROLLING','ON BRAND','BIKIN NAGIH','EYE CANDY','LAYER BY LAYER','IDE MAHAL','MADE TO SELL','CTRL + S'];
     const wb = $('#words');
