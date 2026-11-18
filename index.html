@@ -95,6 +95,7 @@ h1,h2,h3{margin:0;font-weight:400;letter-spacing:-.02em;line-height:1.1;text-wra
 @keyframes blink{50%{opacity:.25}}
 .hero h1{font-size:clamp(42px,7vw,86px);max-width:12.5em;letter-spacing:-.035em;line-height:1.02}
 .hero h1 .serif{font-size:1.08em}
+.hero h1 .w{transform-origin:50% 80%}
 .hero .sub{margin-top:22px;color:var(--dim);font-size:clamp(15px,1.4vw,18px);max-width:30em}
 .btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:32px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:999px;font:500 16px var(--sans);text-decoration:none;cursor:pointer;border:0;transition:transform .3s var(--ease),background .2s}
@@ -848,6 +849,17 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     queue();
 
     M.animate('.nav', { opacity:[0,1], y:[-20,0] }, { duration:.8, ease });
+    /* hero headline keeps popping word by word while the page sits still */
+    const heroWords = $$('#h1 .w');
+    const heroBox = $('#hero');
+    const wave = () => {
+      if (document.hidden) return;
+      const r = heroBox.getBoundingClientRect(); if (r.bottom < innerHeight * .3) return;   // only while the hero is on screen
+      M.animate(heroWords, { y:[0,-14,0], scale:[1,1.1,1], textShadow:['0 0 0 rgba(110,155,255,0)','0 0 28px rgba(110,155,255,.75)','0 0 0 rgba(110,155,255,0)'] },
+        { duration:.75, delay:M.stagger(.09), ease:'easeInOut' });
+    };
+    setTimeout(() => { wave(); setInterval(wave, 5200); }, 2600);
+
     /* scroll-linked effects, computed directly from scroll position (works with Lenis and on every browser) */
     const clamp = (v,a=0,b=1) => Math.min(b, Math.max(a, v));
     const lerpKF = (p, times, vals) => { for (let i=1;i<times.length;i++){ if (p <= times[i]){ const t = (p - times[i-1]) / (times[i] - times[i-1] || 1); return vals[i-1] + (vals[i]-vals[i-1]) * t; } } return vals[vals.length-1]; };
