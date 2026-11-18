@@ -784,6 +784,30 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
 
   if (go){
     document.documentElement.classList.add('js-anim');
+    /* reveal registry: fires when an element enters the viewport.
+       Checked on scroll (works with Lenis) and by IntersectionObserver, so nothing can stay hidden. */
+    const pending = new Set();
+    const register = (el, fn) => pending.add({ el, fn });
+    let checking = false;
+    const check = () => {
+      checking = false;
+      const perParent = new Map();
+      for (const p of [...pending]){
+        const r = p.el.getBoundingClientRect();
+        if (r.top < innerHeight * .88 && r.bottom > 0){
+          pending.delete(p);
+          const k = p.el.parentElement; const n = perParent.get(k) || 0; perParent.set(k, n + 1);
+          p.fn(Math.min(n, 4) * .08);
+        }
+      }
+    };
+    const queue = () => { if (!checking){ checking = true; requestAnimationFrame(check); } };
+    addEventListener('scroll', queue, { passive:true });
+    addEventListener('resize', queue);
+    if (lenis) lenis.on('scroll', queue);
+    setInterval(check, 600);   // also covers pages where rAF/IO are throttled
+
+    // headings: word by word
     wordSets.forEach(([el, ws]) => {
       const inHero = !!el.closest('.hero');
       ws.forEach(w => w.classList.add('pre'));
@@ -791,19 +815,16 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
         ws.forEach(w => w.classList.remove('pre'));
         M.animate(ws, { opacity:[.001,1], filter:['blur(10px)','blur(0px)'], y:[8,0] }, { duration:.8, delay:M.stagger(.045, { startDelay: inHero ? .35 : 0 }), ease });
       };
-      if (inHero) run(); else M.inView(el, () => { run(); }, { amount:.4 });
+      if (inHero) run(); else register(el, run);
     });
-    const blocks = $$('.fx');
-    blocks.forEach(el => el.classList.add('pre'));
+    // blocks
     const showBlock = (el, delay=0) => { if (!el.classList.contains('pre')) return; el.classList.remove('pre');
       M.animate(el, { opacity:[.001,1], filter:['blur(10px)','blur(0px)'], y:[14,0] }, { duration:.8, delay, ease }); };
+    $$('.fx').forEach(el => el.classList.add('pre'));
     $$('.hero .fx').forEach((el, i) => showBlock(el, [0, .15, .9, 1.05, 1.2][i] ?? 1.2));
-    M.inView('.fx', el => {
-      const sibs = [...el.parentElement.children].filter(x => x.classList.contains('fx') && x.classList.contains('pre'));
-      const idx = Math.max(0, sibs.indexOf(el));
-      showBlock(el, Math.min(idx, 4) * .08);
-    }, { amount:.2 });
-    setTimeout(() => $$('.pre').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0){ el.classList.remove('pre'); el.style.opacity = 1; el.style.filter = 'none'; el.style.transform = 'none'; } }), 3500);
+    $$('.fx').filter(el => !el.closest('.hero')).forEach(el => register(el, d => showBlock(el, d)));
+    if ('IntersectionObserver' in window){ const io = new IntersectionObserver(queue, { threshold:[0, .2] }); $$('.fx, [data-words]').forEach(el => io.observe(el)); }
+    queue();
 
     M.animate('.nav', { opacity:[0,1], y:[-20,0] }, { duration:.8, ease });
     M.scroll(M.animate('#progress', { scaleX:[0,1] }, { ease:'linear' }));
