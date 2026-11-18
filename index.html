@@ -120,8 +120,6 @@ section{position:relative}
 .mcopy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;background:radial-gradient(50% 45% at 50% 52%,rgba(0,0,0,.55),transparent 75%),linear-gradient(90deg,#000,transparent 10%,transparent 90%,#000)}
 .ml{display:block;white-space:nowrap;will-change:transform}
 .mtitle{font-size:clamp(36px,7vw,104px);font-weight:700;letter-spacing:-.02em;line-height:.92;text-shadow:0 1px 5px rgba(0,0,0,.37),0 10px 60px rgba(0,0,0,.5);will-change:transform}
-.words{position:absolute;inset:0;pointer-events:none}
-.words span{position:absolute;font-size:12px;font-weight:600;letter-spacing:.14em;color:#fff;background:rgba(47,107,255,.88);padding:7px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 24px rgba(47,107,255,.45);opacity:0}
 
 /* logos */
 .logos{padding-block:70px 10px}
@@ -403,7 +401,6 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
       <div class="marquee"><div class="mtrack rev" style="--dur:110s" data-row="1"></div></div>
       <div class="marquee"><div class="mtrack" style="--dur:34s" data-row="2"></div></div>
     </div>
-    <div class="words" id="words" aria-hidden="true"></div>
     <div class="mcopy">
       <h2 class="mtitle" id="t-meet"><span class="ml" id="ml1">Trusted by brands</span><span class="ml" id="ml2">that sell live.</span></h2>
     </div>
@@ -849,15 +846,6 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     setInterval(scrollFx, 500);   // keeps everything in sync even when the browser throttles frames
     scrollFx();
 
-    const WORDS = ['PALUGADA','SUDAH ADA YANG PUNYA','NO TEMPLATE','PIXEL PERFECT','STOP SCROLLING','ON BRAND','BIKIN NAGIH','EYE CANDY','LAYER BY LAYER','IDE MAHAL','MADE TO SELL','CTRL + S'];
-    const wb = $('#words');
-    WORDS.forEach((w,i) => { const sp = document.createElement('span'); sp.textContent = w; sp.style.left = (4 + (i*29) % 78) + '%'; sp.style.top = (6 + (i*37) % 82) + '%'; wb.appendChild(sp); });
-    M.inView('#meet', () => {
-      const c = $$('#words span').map((sp,i) => M.animate(sp,
-        { opacity:[0,1,1,0], scale:[.6,1.08,1,.9], filter:['blur(8px)','blur(0px)','blur(0px)','blur(6px)'], y:[10,0,-6,-14] },
-        { duration:3.2, delay:i*.55, repeat:Infinity, repeatDelay:WORDS.length*.55-2.8, ease:'easeInOut' }));
-      return () => c.forEach(x => x.stop());
-    }, { amount:.2 });
   }
 
   /* ---------- hero freckles (twinkling particles) ---------- */
