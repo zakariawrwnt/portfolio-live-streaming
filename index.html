@@ -113,6 +113,8 @@ section{position:relative}
 .lead{color:var(--dim);text-align:center;max-width:34em;margin:16px auto 0;font-size:17px}
 
 /* problems */
+.prob{will-change:transform,opacity,filter}
+#prob-wrap{will-change:transform,opacity,filter;transform-origin:50% 40%}
 .probs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;max-width:900px;margin:60px auto 0;text-align:center}
 .prob{display:flex;flex-direction:column;align-items:center;gap:18px;color:var(--dim);font-size:16px;line-height:1.45}
 .tileicon{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(180deg,#151A33,#0A0D1A);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px var(--line),0 10px 30px rgba(0,0,0,.5);color:var(--blue-hi)}
@@ -128,8 +130,8 @@ section{position:relative}
 .mgroup img{width:clamp(120px,11vw,168px);aspect-ratio:9/16;object-fit:cover;border-radius:14px;flex-shrink:0;background:var(--panel)}
 @keyframes mq{to{transform:translateX(-50%)}}
 .mcopy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;background:radial-gradient(50% 45% at 50% 52%,rgba(0,0,0,.55),transparent 75%),linear-gradient(90deg,#000,transparent 10%,transparent 90%,#000)}
-.notany{padding:12px 24px;border-radius:200px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:rgba(255,255,255,.85);font-size:16px;margin-bottom:6px}
-.mtitle{font-size:clamp(40px,7.4vw,108px);font-weight:700;letter-spacing:-.02em;line-height:.92;text-shadow:0 1px 5px rgba(0,0,0,.37),0 10px 60px rgba(0,0,0,.5);will-change:transform}
+.ml{display:block;white-space:nowrap;will-change:transform}
+.mtitle{font-size:clamp(36px,7vw,104px);font-weight:700;letter-spacing:-.02em;line-height:.92;text-shadow:0 1px 5px rgba(0,0,0,.37),0 10px 60px rgba(0,0,0,.5);will-change:transform}
 .words{position:absolute;inset:0;pointer-events:none}
 .words span{position:absolute;font-size:12px;font-weight:600;letter-spacing:.14em;color:#fff;background:rgba(47,107,255,.88);padding:7px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 24px rgba(47,107,255,.45);opacity:0}
 
@@ -418,13 +420,13 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
 
   <!-- PROBLEMS -->
   <section class="sec" id="problems" aria-labelledby="t-prob" style="padding-bottom:70px">
-    <div class="wrap">
-      <span class="eyebrow fx">Problems</span>
-      <h2 class="title" id="t-prob" data-words>Is your live stream facing these issues?</h2>
+    <div class="wrap" id="prob-wrap">
+      <span class="eyebrow">Problems</span>
+      <h2 class="title" id="t-prob">Is your live stream facing these issues?</h2>
       <div class="probs">
-        <div class="prob fx"><span class="tileicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12 12 20l-8-8V4h8z"/><circle cx="8.5" cy="8.5" r="1.5"/></svg></span>Products and prices get lost behind the host.</div>
-        <div class="prob fx"><span class="tileicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M9 9l6 6M15 9l-6 6"/></svg></span>Promos are hard to read on a small phone screen.</div>
-        <div class="prob fx"><span class="tileicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="8" height="14" rx="2"/><rect x="13" y="5" width="8" height="14" rx="2"/><path d="M7 9v6M17 9v6"/></svg></span>Your live looks the same as every other brand’s.</div>
+        <div class="prob"><span class="tileicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12 12 20l-8-8V4h8z"/><circle cx="8.5" cy="8.5" r="1.5"/></svg></span>Products and prices get lost behind the host.</div>
+        <div class="prob"><span class="tileicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M9 9l6 6M15 9l-6 6"/></svg></span>Promos are hard to read on a small phone screen.</div>
+        <div class="prob"><span class="tileicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="8" height="14" rx="2"/><rect x="13" y="5" width="8" height="14" rx="2"/><path d="M7 9v6M17 9v6"/></svg></span>Your live looks the same as every other brand’s.</div>
       </div>
     </div>
   </section>
@@ -438,8 +440,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     </div>
     <div class="words" id="words" aria-hidden="true"></div>
     <div class="mcopy">
-      <div class="notany fx">Not anymore</div>
-      <h2 class="mtitle" id="t-meet">Meet<br>frames that sell</h2>
+      <h2 class="mtitle" id="t-meet"><span class="ml" id="ml1">Trusted by brands</span><span class="ml" id="ml2">that sell live.</span></h2>
     </div>
   </section>
 
@@ -850,6 +851,15 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     M.scroll(M.animate('#progress', { scaleX:[0,1] }, { ease:'linear' }));
     // meet title shrinks 1.1 → 1 while the section scrolls through, like the reference
     M.scroll(M.animate('#t-meet', { scale:[1.1,1] }, { ease:'linear' }), { target: $('#meet'), offset:['start end','end start'] });
+    // the two title lines slide in opposite directions with the scroll
+    M.scroll(M.animate('#ml1', { x:['14%','-10%'] }, { ease:'linear' }), { target: $('#meet'), offset:['start end','end start'] });
+    M.scroll(M.animate('#ml2', { x:['-14%','10%'] }, { ease:'linear' }), { target: $('#meet'), offset:['start end','end start'] });
+
+    // problems: grows into place while scrolling in, then shrinks and fades as it scrolls out (reverses when scrolling up)
+    M.scroll(M.animate('#prob-wrap', {
+        opacity:[0,1,1,0], scale:[.82,1,1,.78], filter:['blur(12px)','blur(0px)','blur(0px)','blur(10px)'], y:[60,0,0,-40]
+      }, { ease:'linear', times:[0,.38,.62,1] }), { target: $('#problems'), offset:['start end','end start'] });
+    $$('.prob').forEach((el,i) => M.scroll(M.animate(el, { y:[40 + i*30, 0, 0, -20 - i*20] }, { ease:'linear', times:[0,.4,.6,1] }), { target: $('#problems'), offset:['start end','end start'] }));
 
     const WORDS = ['PALUGADA','SUDAH ADA YANG PUNYA','NO TEMPLATE','PIXEL PERFECT','STOP SCROLLING','ON BRAND','BIKIN NAGIH','EYE CANDY','LAYER BY LAYER','IDE MAHAL','MADE TO SELL','CTRL + S'];
     const wb = $('#words');
