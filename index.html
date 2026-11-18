@@ -57,20 +57,8 @@ h1,h2,h3{margin:0;font-weight:400;letter-spacing:-.02em;line-height:1.1;text-wra
 
 #progress{position:fixed;left:0;top:env(safe-area-inset-top,0px);height:3px;width:100%;background:linear-gradient(90deg,var(--blue),var(--blue-hi));transform-origin:0 50%;transform:scaleX(0);z-index:70}
 
-/* ---------- floating pill nav ---------- */
-.nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 16px);left:50%;transform:translateX(-50%);z-index:55;display:flex;align-items:center;gap:8px;padding:6px;border-radius:999px;background:rgba(20,22,36,.6);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 0 0 1px var(--line-2),0 12px 40px rgba(0,0,0,.45)}
 .appicon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(160deg,#9AB8FF 0%,#4A80FF 38%,#1C47D6 100%);box-shadow:inset 0 1px 1px rgba(255,255,255,.7),inset 0 -2px 4px rgba(0,20,90,.5),0 4px 14px rgba(47,107,255,.45);color:#fff;text-decoration:none;flex-shrink:0}
 .appicon svg{width:58%;height:58%;filter:drop-shadow(0 1px 1px rgba(0,20,90,.5))}
-.nav .cta{height:34px;padding:0 18px;white-space:nowrap;border-radius:999px;background:var(--white);color:#000;font:500 14px var(--sans);text-decoration:none;display:inline-flex;align-items:center}
-.burger{width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;cursor:pointer}
-.burger span{display:block;width:12px;height:1.5px;background:currentColor;box-shadow:0 4px 0 currentColor;transform:translateY(-2px)}
-.menu{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.82);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:grid;place-items:center;padding:24px var(--gut-r) 24px var(--gut-l)}
-.menu-card{width:min(420px,100%);background:var(--panel);border-radius:24px;box-shadow:0 0 0 1px var(--line-2),0 30px 80px rgba(0,0,0,.6);padding:10px}
-.menu-card a{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:14px;text-decoration:none;font-size:20px}
-.menu-card a small{font-size:13px;color:var(--faint)}
-.menu-card a:hover{background:rgba(255,255,255,.06)}
-.menu-card .row{display:flex;gap:8px;padding:8px}
-.menu-card .row a{flex:1;justify-content:center;font-size:14px;background:rgba(255,255,255,.06)}
 .xbtn{position:absolute;top:max(18px,env(safe-area-inset-top,0px));right:max(18px,env(safe-area-inset-right,0px));width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.1);color:#fff;font-size:22px;cursor:pointer}
 
 /* ---------- hero ---------- */
@@ -87,7 +75,6 @@ h1,h2,h3{margin:0;font-weight:400;letter-spacing:-.02em;line-height:1.1;text-wra
 .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:6px 6px;mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.6) 50%,transparent 85%);-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.6) 50%,transparent 85%);pointer-events:none;z-index:1}
 .hero::after{content:"";position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(transparent,var(--black) 85%);pointer-events:none;z-index:1}
 .hero .inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
-.bigicon{width:78px;height:78px;border-radius:22px;margin-bottom:30px}
 .intro{display:inline-flex;align-items:center;gap:10px;padding:6px 16px 6px 6px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px var(--line-2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:14px;color:var(--dim);margin-bottom:26px;max-width:100%;text-align:left}
 .intro b{color:#fff;font-weight:500}
 .live{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;background:#E5243B;color:#fff;font-weight:600;font-size:11px;letter-spacing:.08em;padding:4px 9px;border-radius:999px}
@@ -291,7 +278,9 @@ section{position:relative}
 /* contact */
 .contact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px}
 .ch{position:relative;background:var(--panel);border-radius:18px;box-shadow:0 0 0 1px var(--line);padding:18px;display:flex;flex-direction:column;gap:14px;text-decoration:none;min-width:0;transition:box-shadow .3s,transform .4s var(--ease)}
-a.ch:hover{box-shadow:0 0 0 1px rgba(110,155,255,.5);transform:translateY(-3px)}
+a.ch:hover,.ch:has(.cover:hover){box-shadow:0 0 0 1px rgba(110,155,255,.5);transform:translateY(-3px)}
+.ch .cover{position:absolute;inset:0;border-radius:inherit;z-index:1}
+.ch .copy{z-index:2}
 .ch .tileicon{width:42px;height:42px;border-radius:12px}
 .ch .tileicon svg{width:20px;height:20px}
 .ch small{color:var(--faint);font-size:13px;display:block}
@@ -318,17 +307,14 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
 .modal .info .btn{margin-top:22px}
 .toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 76px);transform:translateX(-50%);background:var(--white);color:#000;font-weight:500;font-size:14px;padding:10px 18px;border-radius:999px;z-index:120}
 
-.music{position:fixed;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:53;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-.music-box{width:240px;max-width:calc(100vw - 32px);aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px var(--line-2);background:#000}
-.music-box iframe{width:100%;height:100%;display:block;border:0}
-.music-btn{display:flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 12px;border-radius:999px;background:rgba(20,22,36,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 0 0 1px var(--line-2);color:#fff;text-decoration:none}
+.music-btn{position:fixed;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:53;border:0;cursor:pointer;font:inherit;display:flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 12px;border-radius:999px;background:rgba(20,22,36,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 0 0 1px var(--line-2);color:#fff;text-decoration:none}
 .mt{display:flex;flex-direction:column;line-height:1.2}
 .mt b{font-weight:500;font-size:13px}
 .mt small{font-size:11px;color:var(--faint)}
 .eq{display:flex;align-items:flex-end;gap:2px;width:20px;height:16px}
 .eq i{flex:1;height:30%;background:var(--blue-hi);border-radius:1px}
-.music.on .eq i{animation:eq .9s ease-in-out infinite}
-.music.on .eq i:nth-child(2){animation-delay:.2s}.music.on .eq i:nth-child(3){animation-delay:.4s}.music.on .eq i:nth-child(4){animation-delay:.1s}
+.music-btn.on .eq i{animation:eq .9s ease-in-out infinite}
+.music-btn.on .eq i:nth-child(2){animation-delay:.2s}.music-btn.on .eq i:nth-child(3){animation-delay:.4s}.music-btn.on .eq i:nth-child(4){animation-delay:.1s}
 @keyframes eq{0%,100%{height:25%}50%{height:100%}}
 
 @media (max-width:960px){
@@ -375,27 +361,6 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
 <body>
 <div id="progress" aria-hidden="true"></div>
 
-<nav class="nav" aria-label="Main">
-  <a class="appicon" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><circle cx="12" cy="7" r="1.3" fill="currentColor" stroke="none"/><path d="M9 15.5h6"/></svg></a>
-  <a class="cta" href="#contact">Get in touch</a>
-  <button class="burger" id="menu-open" aria-label="Open menu" aria-haspopup="dialog"><span></span></button>
-</nav>
-
-<div class="menu" id="menu" hidden role="dialog" aria-modal="true" aria-label="Menu">
-  <button class="xbtn" id="menu-close" aria-label="Close menu">×</button>
-  <div class="menu-card">
-    <a href="#usecases">See it in action <small>Live frames</small></a>
-    <a href="#work">Portfolio <small>3 frames</small></a>
-    <a href="#features">What you get <small>Services</small></a>
-    <a href="#about">About <small>Experience</small></a>
-    <a href="#faq">FAQ <small>Questions</small></a>
-    <a href="#contact">Contact <small>Email, WhatsApp</small></a>
-    <div class="row">
-      <a href="https://www.linkedin.com/in/zakaria-wirawanto-875a5a218/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.behance.net/gallery/251046375/Graphic-Design-Portfolio-2026" target="_blank" rel="noopener">Behance</a>
-    </div>
-  </div>
-</div>
 
 <main id="top">
   <!-- HERO -->
@@ -403,7 +368,6 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     <div class="aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
     <canvas id="freckles" aria-hidden="true"></canvas>
     <div class="wrap inner">
-      <span class="appicon bigicon fx" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><circle cx="12" cy="7" r="1.3" fill="currentColor" stroke="none"/><path d="M9 15.5h6"/></svg></span>
       <p class="intro fx"><span class="live"><i></i>LIVE</span><span><b>Hi, I’m Zakaria Wirawanto.</b> Graphic designer crafting visuals that help brands look sharp, stay consistent and get noticed.</span></p>
       <h1 id="h1" data-words>Portfolio live streaming <span class="serif">frames</span> that make your brand stand out</h1>
       <p class="sub fx">Give your live stream a professional look with custom frames that highlight your products, keep promotions clear, and reflect your brand’s identity.</p>
@@ -676,13 +640,15 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
   <section class="wrap" id="contact" aria-label="Contact">
     <div class="contact">
       <div class="ch fx">
+        <a class="cover" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zakariawirawanto@gmail.com&amp;su=Live%20streaming%20frame%20project&amp;body=Halo%20Zakaria%2C%20saya%20ingin%20diskusi%20frame%20live%20streaming%20untuk%20brand%20saya." target="_blank" rel="noopener" aria-label="Send an email to zakariawirawanto@gmail.com in Gmail"></a>
         <span class="tileicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-        <span><small>Email</small><span class="v">zakariawirawanto@gmail.com</span></span>
+        <span><small>Email · opens Gmail</small><span class="v">zakariawirawanto@gmail.com ↗</span></span>
         <button class="copy" data-copy="zakariawirawanto@gmail.com">Copy</button>
       </div>
       <div class="ch fx">
+        <a class="cover" href="https://wa.me/6281382115101?text=Halo%20Zakaria%2C%20saya%20ingin%20diskusi%20frame%20live%20streaming%20untuk%20brand%20saya." target="_blank" rel="noopener" aria-label="Chat on WhatsApp with +62 813 8211 5101"></a>
         <span class="tileicon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></span>
-        <span><small>WhatsApp</small><span class="v">+62 813 8211 5101</span></span>
+        <span><small>WhatsApp · start a chat</small><span class="v">+62 813 8211 5101 ↗</span></span>
         <button class="copy" data-copy="+6281382115101">Copy</button>
       </div>
       <a class="ch fx" href="https://www.linkedin.com/in/zakaria-wirawanto-875a5a218/" target="_blank" rel="noopener">
@@ -705,7 +671,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
         <p>Custom live streaming frames that highlight your products, keep promotions clear and reflect your brand.</p>
       </div>
       <div><h4>Browse</h4><ul><li><a href="#usecases">See it in action</a></li><li><a href="#work">Portfolio</a></li><li><a href="#features">What you get</a></li><li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-      <div><h4>Contact</h4><ul><li><a href="#contact">Email</a></li><li><a href="https://wa.me/6281382115101" target="_blank" rel="noopener">WhatsApp</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zakariawirawanto@gmail.com&amp;su=Live%20streaming%20frame%20project" target="_blank" rel="noopener">Email</a></li><li><a href="https://wa.me/6281382115101" target="_blank" rel="noopener">WhatsApp</a></li></ul></div>
       <div><h4>Profiles</h4><ul><li><a href="https://www.linkedin.com/in/zakaria-wirawanto-875a5a218/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.behance.net/gallery/251046375/Graphic-Design-Portfolio-2026" target="_blank" rel="noopener">Behance</a></li></ul></div>
     </div>
     <div class="fbot"><span>© 2026 Zakaria Wirawanto. All frames shown are client work.</span><span>Live streaming frame design</span></div>
@@ -728,13 +694,11 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
 </div>
 <div class="toast" id="toast" hidden></div>
 
-<div class="music" id="music">
-  <div class="music-box" id="music-box" hidden><div id="yt"></div></div>
-  <a class="music-btn" id="music-btn" href="https://www.youtube.com/watch?v=T-q9Ww3-F9U" target="_blank" rel="noopener" aria-label="Play background music">
-    <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-    <span class="mt"><b id="music-state">Play music</b><small>Relaxing jazz · Me Time Radio</small></span>
-  </a>
-</div>
+<audio id="bgm" src="media/music/backsound.mp3" loop preload="auto" autoplay></audio>
+<button class="music-btn" id="music-btn" aria-label="Mute background music">
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <span class="mt"><b id="music-state">Music on</b></span>
+</button>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
@@ -843,12 +807,11 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     const showBlock = (el, delay=0) => { if (!el.classList.contains('pre')) return; el.classList.remove('pre');
       M.animate(el, { opacity:[.001,1], filter:['blur(10px)','blur(0px)'], y:[14,0] }, { duration:.8, delay, ease }); };
     $$('.fx').forEach(el => el.classList.add('pre'));
-    $$('.hero .fx').forEach((el, i) => showBlock(el, [0, .15, .9, 1.05, 1.2][i] ?? 1.2));
+    $$('.hero .fx').forEach((el, i) => showBlock(el, [.1, .9, 1.05, 1.2][i] ?? 1.2));
     $$('.fx').filter(el => !el.closest('.hero')).forEach(el => register(el, d => showBlock(el, d)));
     if ('IntersectionObserver' in window){ const io = new IntersectionObserver(queue, { threshold:[0, .2] }); $$('.fx, [data-words]').forEach(el => io.observe(el)); }
     queue();
 
-    M.animate('.nav', { opacity:[0,1], y:[-20,0] }, { duration:.8, ease });
     /* hero headline keeps popping word by word while the page sits still */
     const heroWords = $$('#h1 .w');
     const heroBox = $('#hero');
@@ -970,16 +933,6 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     else old.remove();
   }, 2200);
 
-  /* ---------- menu ---------- */
-  const menu = $('#menu');
-  const openMenu = () => { menu.hidden = false; lenis && lenis.stop(); document.body.style.overflow = 'hidden';
-    if (go){ M.animate(menu, { opacity:[0,1] }, { duration:.25 }); M.animate('.menu-card', { opacity:[0,1], scale:[.92,1], filter:['blur(10px)','blur(0px)'] }, { duration:.5, ease }); } $('#menu-close').focus(); };
-  const closeMenu = () => { menu.hidden = true; lenis && lenis.start(); document.body.style.overflow = ''; };
-  $('#menu-open').addEventListener('click', openMenu);
-  $('#menu-close').addEventListener('click', () => { closeMenu(); $('#menu-open').focus(); });
-  menu.addEventListener('click', e => { if (e.target === menu) closeMenu(); });
-  $$('.menu-card a').forEach(a => a.addEventListener('click', closeMenu));
-
   /* ---------- modal player ---------- */
   const data = [
     { key:'viva-frame-1', poster:'media/viva-frame-1.jpg', title:'VIVA Cosmetics, Hari Pahlawan', desc:'“Merdeka Dari Kulit Kusam” promo frame with a product shelf and two price cards. 9:16, 10 second preview.' },
@@ -1001,7 +954,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
   $('#m-close').addEventListener('click', close);
   $('#m-cta').addEventListener('click', close);
   modal.addEventListener('click', e => { if (e.target === modal) close(); });
-  document.addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (!modal.hidden) close(); else if (!menu.hidden) closeMenu(); });
+  document.addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (!modal.hidden) close(); });
 
   /* ---------- copy ---------- */
   const toast = $('#toast'); let tt;
@@ -1012,24 +965,19 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
     try { navigator.clipboard.writeText(val).then(() => { b.textContent = 'Copied'; say('Copied ' + val); setTimeout(() => b.textContent = 'Copy', 1600); }, fallback); } catch(e){ fallback(); }
   }));
 
-  /* ---------- background music ---------- */
-  const VID = 'T-q9Ww3-F9U';
-  const mWrap = $('#music'), mBtn = $('#music-btn'), mState = $('#music-state'), mBox = $('#music-box');
-  let ytReady = false, yt = null, playing = false;
-  window.onYouTubeIframeAPIReady = () => { ytReady = true; };
-  const ytS = document.createElement('script'); ytS.src = 'https://www.youtube.com/iframe_api';
-  ytS.onerror = () => { mState.textContent = 'Listen on YouTube'; }; document.head.appendChild(ytS);
-  const setState = on => { playing = on; mWrap.classList.toggle('on', on); mState.textContent = on ? 'Pause music' : 'Play music'; };
-  mBtn.addEventListener('click', e => {
-    if (!ytReady || !window.YT || !YT.Player) return;
-    e.preventDefault();
-    if (!yt){ mBox.hidden = false;
-      yt = new YT.Player('yt', { videoId: VID, width:'100%', height:'100%', playerVars:{ autoplay:1, loop:1, playlist:VID, controls:1, rel:0, playsinline:1 },
-        events:{ onReady: ev => { ev.target.setVolume(35); ev.target.playVideo(); }, onStateChange: ev => setState(ev.data === 1),
-          onError: () => { mBox.hidden = true; yt = null; ytReady = false; mState.textContent = 'Listen on YouTube'; say('This song can’t play here. Tap again to open it on YouTube.'); } } });
-      return; }
-    playing ? yt.pauseVideo() : yt.playVideo();
-  });
+  /* ---------- background music (MP3, starts by itself) ----------
+     Browsers only allow sound after the visitor's first tap, click or key press.
+     The track tries to start at once; if the browser blocks it, it starts on the first interaction. */
+  const bgm = $('#bgm'), mBtn = $('#music-btn'), mState = $('#music-state');
+  let wantMusic = true;
+  bgm.volume = 0.35;
+  const setState = () => { const on = !bgm.paused; mBtn.classList.toggle('on', on); mState.textContent = on ? 'Music on' : (wantMusic ? 'Tap for music' : 'Music off'); mBtn.setAttribute('aria-label', on ? 'Mute background music' : 'Play background music'); };
+  const tryPlay = () => { if (!wantMusic) return; bgm.play().then(setState).catch(setState); };
+  ['pointerdown','keydown','touchstart'].forEach(ev => addEventListener(ev, function once(){ if (bgm.paused) tryPlay(); }, { passive:true }));
+  bgm.addEventListener('play', setState); bgm.addEventListener('pause', setState);
+  mBtn.addEventListener('click', e => { e.stopPropagation(); if (bgm.paused){ wantMusic = true; tryPlay(); } else { wantMusic = false; bgm.pause(); } });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) bgm.pause(); else tryPlay(); });
+  tryPlay();
 })();
 </script>
 </body>
