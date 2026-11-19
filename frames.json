@@ -1,0 +1,57 @@
+{
+  "_doc": "Daftar frame di portfolio. Urutan = urutan tampil (terbaru di atas). Jalankan: python3 tools/build_frames.py",
+  "groups": {
+    "viva": "VIVA Cosmetics",
+    "reda": "Red-A"
+  },
+  "frames": [
+    {
+      "key": "viva-payday",
+      "group": "viva",
+      "brand": "VIVA Cosmetics",
+      "logo": "media/logos/viva.png",
+      "logoSquare": true,
+      "campaign": "Payday, November 2026",
+      "title": "Payday drive frame",
+      "desc": "The host sits in an animated red convertible on a bright city road, with floating products and one bundle card, “Paket Kulit Selembut Mawar”, held at the top.",
+      "tags": ["Payday sale", "Animated scene", "Bundle 149K"],
+      "kw": "viva cosmetics payday november 2026 car convertible paket kulit selembut mawar 149k bundle animated",
+      "duration": "0:19",
+      "format": "9:16 animated live frame",
+      "bullets": ["Animated convertible scene for the host", "Floating product animation", "Bundle price card “Paket Kulit Selembut Mawar”"],
+      "source": {"tracker": "nov26-04"}
+    },
+    {
+      "key": "viva-frame-1",
+      "group": "viva",
+      "brand": "VIVA Cosmetics",
+      "logo": "media/logos/viva.png",
+      "logoSquare": true,
+      "campaign": "Hari Pahlawan · “Merdeka Dari Kulit Kusam”",
+      "title": "“Merdeka Dari Kulit Kusam” frame",
+      "desc": "A pink studio set with a product shelf, a hero tube on the left and two price cards, so Skin Food Cream and the Laila Cleanser bundle stay visible the whole session.",
+      "tags": ["Heroes’ Day sale", "Product shelf", "2 price cards"],
+      "kw": "viva cosmetics hari pahlawan heroes day merdeka kulit kusam skin food cream laila cleanser 58k 53k price card shelf",
+      "duration": "0:10",
+      "format": "9:16 live frame",
+      "bullets": ["Pink studio set with product shelf", "Hero product tube placement", "Two price cards for Skin Food Cream and Laila Cleanser"],
+      "source": {"tracker": "nov26-01"}
+    },
+    {
+      "key": "reda-1111",
+      "group": "reda",
+      "brand": "Red-A",
+      "logo": "media/logos/red-a.png",
+      "logoSquare": false,
+      "campaign": "11.11 Beauty Flash Sale",
+      "title": "11.11 Beauty Flash Sale frame",
+      "desc": "A red boutique counter lined with compact powders, a looping product video on the side wall and a trust bar for free shipping, halal, extra promo and BPOM.",
+      "tags": ["11.11 sale", "Product counter", "Trust badges"],
+      "kw": "red-a reda 11.11 beauty flash sale compact powder facial foam bebas ongkir halal bpom trust",
+      "duration": "0:35",
+      "format": "9:16 live frame with motion",
+      "bullets": ["Boutique counter lined with compact powders", "Looping product video on the side wall", "Trust bar: free shipping, halal, extra promo, BPOM"],
+      "source": {"tracker": "nov26-02"}
+    }
+  ]
+}

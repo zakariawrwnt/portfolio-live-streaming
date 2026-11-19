@@ -376,7 +376,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
       <div class="facts fx">
         <div><strong>10+</strong>brands designed for</div>
         <div><strong>9:16</strong>vertical, made for live apps</div>
-        <div><strong>3</strong>live frames in this portfolio</div>
+        <div><!--@frames:count--><strong>3</strong><!--/@frames:count-->live frames in this portfolio</div>
       </div>
     </div>
   </section>
@@ -436,7 +436,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
           <h3>Clients &amp; campaigns</h3>
           <div class="carousel" id="car">
             <div class="bgblur" id="car-bg"></div>
-            <div class="cinfo" id="cinfo" aria-live="polite">
+            <!--@frames:carousel--><div class="cinfo" id="cinfo" aria-live="polite">
               <span class="cnum" id="c-num">01 / 03</span>
               <span class="clogo"><img id="c-logo" src="media/logos/viva.png" alt="VIVA Cosmetics" class="sq"></span>
               <b id="c-brand">VIVA Cosmetics</b>
@@ -444,13 +444,13 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
               <span class="ttags" id="c-tags"><span>Payday sale</span><span>Animated scene</span><span>Bundle 149K</span></span>
             </div>
             <div class="slides">
-              <img class="on" src="media/viva-payday.jpg" alt="VIVA Payday frame">
-              <img src="media/reda-1111.jpg" alt="Red-A 11.11 frame">
-              <img src="media/viva-frame-1.jpg" alt="VIVA Hari Pahlawan frame">
+              <img class="on" src="media/viva-payday.jpg" alt="VIVA Cosmetics Payday drive frame">
+              <img src="media/viva-frame-1.jpg" alt="VIVA Cosmetics “Merdeka Dari Kulit Kusam” frame">
+              <img src="media/reda-1111.jpg" alt="Red-A 11.11 Beauty Flash Sale frame">
             </div>
             <button class="carr l" id="car-prev" aria-label="Previous frame">‹</button>
             <button class="carr r" id="car-next" aria-label="Next frame">›</button>
-            <div class="dots" id="car-dots"><button class="on" aria-label="Frame 1"></button><button aria-label="Frame 2"></button><button aria-label="Frame 3"></button></div>
+            <div class="dots" id="car-dots"><button class="on" aria-label="Frame 1"></button><button aria-label="Frame 2"></button><button aria-label="Frame 3"></button></div><!--/@frames:carousel-->
           </div>
         </div>
         <div class="bcard fx">
@@ -475,29 +475,29 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
       <span class="eyebrow fx">Portfolio</span>
       <h2 class="title" id="t-work" data-words>Peek into the <span class="serif">frames</span></h2>
       <div class="chips fx" role="group" aria-label="Filter frames by brand">
-        <button class="chip" data-filter="all" aria-pressed="true">All frames</button>
+        <!--@frames:chips--><button class="chip" data-filter="all" aria-pressed="true">All frames</button>
         <button class="chip" data-filter="viva" aria-pressed="false">VIVA Cosmetics</button>
-        <button class="chip" data-filter="reda" aria-pressed="false">Red-A</button>
+        <button class="chip" data-filter="reda" aria-pressed="false">Red-A</button><!--/@frames:chips-->
       </div>
       <label class="search fx" for="q">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         <input id="q" type="search" placeholder="Search: payday, 11.11, price card…" autocomplete="off" aria-label="Search frames">
       </label>
       <div class="cgrid" id="cgrid">
-        <button class="ccard fx" data-open="1" data-brand="viva" data-kw="viva cosmetics payday november 2026 car convertible paket kulit selembut mawar 149k bundle animated" aria-label="Watch VIVA Cosmetics Payday drive frame">
+        <!--@frames:cards--><button class="ccard fx" data-open="0" data-brand="viva" data-kw="viva cosmetics payday november 2026 car convertible paket kulit selembut mawar 149k bundle animated" aria-label="Watch VIVA Cosmetics Payday drive frame">
           <img src="media/viva-payday.jpg" alt="" loading="lazy"><video data-key="viva-payday" muted loop playsinline preload="none"></video>
           <span class="cm">
-            <span class="brand"><img src="media/logos/viva.png" alt="">VIVA Cosmetics · Payday, Nov 2026</span>
+            <span class="brand"><img src="media/logos/viva.png" alt="">VIVA Cosmetics · Payday, November 2026</span>
             <h3>Payday drive frame</h3>
             <span class="desc">The host sits in an animated red convertible on a bright city road, with floating products and one bundle card, “Paket Kulit Selembut Mawar”, held at the top.</span>
             <span class="ttags"><span>Payday sale</span><span>Animated scene</span><span>Bundle 149K</span></span>
             <span class="count">0:19 preview</span>
           </span>
         </button>
-        <button class="ccard fx" data-open="0" data-brand="viva" data-kw="viva cosmetics hari pahlawan heroes day merdeka kulit kusam skin food cream laila cleanser 58k 53k price card shelf" aria-label="Watch VIVA Cosmetics Hari Pahlawan frame">
+        <button class="ccard fx" data-open="1" data-brand="viva" data-kw="viva cosmetics hari pahlawan heroes day merdeka kulit kusam skin food cream laila cleanser 58k 53k price card shelf" aria-label="Watch VIVA Cosmetics “Merdeka Dari Kulit Kusam” frame">
           <img src="media/viva-frame-1.jpg" alt="" loading="lazy"><video data-key="viva-frame-1" muted loop playsinline preload="none"></video>
           <span class="cm">
-            <span class="brand"><img src="media/logos/viva.png" alt="">VIVA Cosmetics · Hari Pahlawan</span>
+            <span class="brand"><img src="media/logos/viva.png" alt="">VIVA Cosmetics · Hari Pahlawan · “Merdeka Dari Kulit Kusam”</span>
             <h3>“Merdeka Dari Kulit Kusam” frame</h3>
             <span class="desc">A pink studio set with a product shelf, a hero tube on the left and two price cards, so Skin Food Cream and the Laila Cleanser bundle stay visible the whole session.</span>
             <span class="ttags"><span>Heroes’ Day sale</span><span>Product shelf</span><span>2 price cards</span></span>
@@ -507,33 +507,33 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
         <button class="ccard fx" data-open="2" data-brand="reda" data-kw="red-a reda 11.11 beauty flash sale compact powder facial foam bebas ongkir halal bpom trust" aria-label="Watch Red-A 11.11 Beauty Flash Sale frame">
           <img src="media/reda-1111.jpg" alt="" loading="lazy"><video data-key="reda-1111" muted loop playsinline preload="none"></video>
           <span class="cm">
-            <span class="brand"><img src="media/logos/red-a.png" alt="">Red-A · 11.11 Beauty Series</span>
+            <span class="brand"><img src="media/logos/red-a.png" alt="">Red-A · 11.11 Beauty Flash Sale</span>
             <h3>11.11 Beauty Flash Sale frame</h3>
             <span class="desc">A red boutique counter lined with compact powders, a looping product video on the side wall and a trust bar for free shipping, halal, extra promo and BPOM.</span>
             <span class="ttags"><span>11.11 sale</span><span>Product counter</span><span>Trust badges</span></span>
             <span class="count">0:35 preview</span>
           </span>
-        </button>
+        </button><!--/@frames:cards-->
         <div class="empty" id="empty" hidden><strong>No frames match that search</strong>Try “VIVA”, “Red-A”, “payday” or “11.11”, or pick All frames.</div>
       </div>
 
-      <div class="results">
+      <!--@frames:results--><div class="results">
         <div class="res fx">
-          <h3>VIVA Cosmetics · Payday</h3>
+          <h3>VIVA Cosmetics · Payday, November 2026</h3>
           <dl><dt>Campaign</dt><dd>Payday, November 2026</dd><dt>Format</dt><dd>9:16 animated live frame</dd></dl>
           <ul><li>Animated convertible scene for the host</li><li>Floating product animation</li><li>Bundle price card “Paket Kulit Selembut Mawar”</li></ul>
         </div>
         <div class="res fx">
-          <h3>VIVA Cosmetics · Hari Pahlawan</h3>
-          <dl><dt>Campaign</dt><dd>“Merdeka Dari Kulit Kusam”</dd><dt>Format</dt><dd>9:16 live frame</dd></dl>
+          <h3>VIVA Cosmetics · Hari Pahlawan · “Merdeka Dari Kulit Kusam”</h3>
+          <dl><dt>Campaign</dt><dd>Hari Pahlawan · “Merdeka Dari Kulit Kusam”</dd><dt>Format</dt><dd>9:16 live frame</dd></dl>
           <ul><li>Pink studio set with product shelf</li><li>Hero product tube placement</li><li>Two price cards for Skin Food Cream and Laila Cleanser</li></ul>
         </div>
         <div class="res fx">
-          <h3>Red-A · 11.11 Beauty Series</h3>
+          <h3>Red-A · 11.11 Beauty Flash Sale</h3>
           <dl><dt>Campaign</dt><dd>11.11 Beauty Flash Sale</dd><dt>Format</dt><dd>9:16 live frame with motion</dd></dl>
           <ul><li>Boutique counter lined with compact powders</li><li>Looping product video on the side wall</li><li>Trust bar: free shipping, halal, extra promo, BPOM</li></ul>
         </div>
-      </div>
+      </div><!--/@frames:results-->
     </div>
   </section>
 
@@ -713,15 +713,15 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
        preview : klip ringan tanpa suara untuk hover di kartu
        full    : video kualitas penuh + suara untuk pemutar besar
   ==================================================== */
-  const VIDEOS = {
-    'viva-frame-1': { preview: 'media/preview/viva-frame-1.mp4', full: 'media/viva-frame-1.mp4' },
-    'viva-payday':  { preview: 'media/preview/viva-payday.mp4',  full: 'media/viva-payday.mp4'  },
-    'reda-1111':    { preview: 'media/preview/reda-1111.mp4',    full: 'media/reda-1111.mp4'    }
-  };
+  /*@frames:videos*/const VIDEOS = {
+    "viva-payday": { preview: "media/preview/viva-payday.mp4", full: "media/viva-payday.mp4" },
+    "viva-frame-1": { preview: "media/preview/viva-frame-1.mp4", full: "media/viva-frame-1.mp4" },
+    "reda-1111": { preview: "media/preview/reda-1111.mp4", full: "media/reda-1111.mp4" }
+  };/*/@frames:videos*/
 
   /* ---------- 9:16 tiles ---------- */
   const T = [];
-  ['viva-payday','reda-1111','viva-frame-1'].forEach(k => { for (let i=0;i<8;i++) T.push(`media/ptiles/${k}-${i}.jpg`); });
+  /*@frames:tiles*/["viva-payday", "viva-frame-1", "reda-1111"].forEach(k => { for (let i=0;i<8;i++) T.push(`media/ptiles/${k}-${i}.jpg`); });/*/@frames:tiles*/
   const shuffle = (arr, seed) => arr.map((v,i) => [v, Math.abs(Math.sin(i*12.9898 + seed)*43758.5453) % 1]).sort((a,b) => a[1]-b[1]).map(x => x[0]);
   const imgs = list => list.map(s => `<img src="${s}" alt="" loading="lazy" decoding="async">`).join('');
   $$('[data-row]').forEach((tr, i) => { const g = `<div class="mgroup">${imgs(shuffle(T, i+1).slice(0, 14))}</div>`; tr.innerHTML = g + g; });
@@ -865,14 +865,14 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
 
   /* ---------- carousel ---------- */
   const slides = $$('#car .slides img'), dots = $$('#car-dots button'), cbg = $('#car-bg'); let ci = 0, ctimer;
-  const CLIENTS = [
-    { logo:'media/logos/viva.png', sq:true, brand:'VIVA Cosmetics', camp:'Payday, November 2026', tags:['Payday sale','Animated scene','Bundle 149K'] },
-    { logo:'media/logos/red-a.png', sq:false, brand:'Red-A', camp:'11.11 Beauty Flash Sale', tags:['11.11 sale','Product counter','Trust badges'] },
-    { logo:'media/logos/viva.png', sq:true, brand:'VIVA Cosmetics', camp:'Hari Pahlawan · “Merdeka Dari Kulit Kusam”', tags:['Heroes’ Day sale','Product shelf','2 price cards'] }
-  ];
+  /*@frames:clients*/const CLIENTS = [
+    {"logo": "media/logos/viva.png", "sq": true, "brand": "VIVA Cosmetics", "camp": "Payday, November 2026", "tags": ["Payday sale", "Animated scene", "Bundle 149K"]},
+    {"logo": "media/logos/viva.png", "sq": true, "brand": "VIVA Cosmetics", "camp": "Hari Pahlawan · “Merdeka Dari Kulit Kusam”", "tags": ["Heroes’ Day sale", "Product shelf", "2 price cards"]},
+    {"logo": "media/logos/red-a.png", "sq": false, "brand": "Red-A", "camp": "11.11 Beauty Flash Sale", "tags": ["11.11 sale", "Product counter", "Trust badges"]}
+  ];/*/@frames:clients*/
   const cinfo = $('#cinfo');
   const fillInfo = () => { const c = CLIENTS[ci]; const lg = $('#c-logo'); lg.src = c.logo; lg.alt = c.brand; lg.classList.toggle('sq', c.sq);
-    $('#c-num').textContent = `0${ci+1} / 0${CLIENTS.length}`; $('#c-brand').textContent = c.brand; $('#c-camp').textContent = c.camp;
+    $('#c-num').textContent = `${String(ci+1).padStart(2,'0')} / ${String(CLIENTS.length).padStart(2,'0')}`; $('#c-brand').textContent = c.brand; $('#c-camp').textContent = c.camp;
     $('#c-tags').innerHTML = c.tags.map(t => `<span>${t}</span>`).join(''); };
   let firstSlide = true;
   const showSlide = i => { ci = (i + slides.length) % slides.length; slides.forEach((s,k) => s.classList.toggle('on', k===ci)); dots.forEach((d,k) => d.classList.toggle('on', k===ci)); cbg.style.backgroundImage = `url(${slides[ci].getAttribute('src')})`;
@@ -922,11 +922,11 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
   }, 2200);
 
   /* ---------- modal player ---------- */
-  const data = [
-    { key:'viva-frame-1', poster:'media/viva-frame-1.jpg', title:'VIVA Cosmetics, Hari Pahlawan', desc:'“Merdeka Dari Kulit Kusam” promo frame with a product shelf and two price cards. 9:16, 10 second preview.' },
-    { key:'viva-payday', poster:'media/viva-payday.jpg', title:'VIVA Cosmetics, Payday', desc:'Animated convertible scene with floating products and the “Paket Kulit Selembut Mawar” bundle card. 9:16, 19 second preview.' },
-    { key:'reda-1111', poster:'media/reda-1111.jpg', title:'Red-A, 11.11 Beauty Flash Sale', desc:'Red boutique counter with compact powders, a side product video and a trust bar. 9:16, 35 second preview.' }
-  ];
+  /*@frames:modal*/const data = [
+    {"key": "viva-payday", "poster": "media/viva-payday.jpg", "title": "VIVA Cosmetics, Payday, November 2026", "desc": "The host sits in an animated red convertible on a bright city road, with floating products and one bundle card, “Paket Kulit Selembut Mawar”, held at the top. 9:16, 0:19 preview."},
+    {"key": "viva-frame-1", "poster": "media/viva-frame-1.jpg", "title": "VIVA Cosmetics, Hari Pahlawan · “Merdeka Dari Kulit Kusam”", "desc": "A pink studio set with a product shelf, a hero tube on the left and two price cards, so Skin Food Cream and the Laila Cleanser bundle stay visible the whole session. 9:16, 0:10 preview."},
+    {"key": "reda-1111", "poster": "media/reda-1111.jpg", "title": "Red-A, 11.11 Beauty Flash Sale", "desc": "A red boutique counter lined with compact powders, a looping product video on the side wall and a trust bar for free shipping, halal, extra promo and BPOM. 9:16, 0:35 preview."}
+  ];/*/@frames:modal*/
   const modal = $('#modal'), mv = $('#m-video'); let lastFocus = null;
   function open(i){
     const d = data[i]; lastFocus = document.activeElement; cpill.classList.remove('on');
