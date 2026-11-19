@@ -184,10 +184,10 @@ section{position:relative}
 .ccard > video{opacity:0;transition:opacity .35s}
 .ccard.playing > video{opacity:1}
 .ccard:hover > img{transform:scale(1.04)}
-.ccard::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.4) 40%,transparent 62%);pointer-events:none;z-index:1}
+.ccard::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.82) 28%,rgba(0,0,0,.45) 46%,transparent 66%);pointer-events:none;z-index:1}
 .ccard .cm{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;display:flex;flex-direction:column;gap:7px}
 .cm .brand{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--dim)}
-.cm .brand img{height:18px;width:auto}
+.cm .brand img{height:16px;width:auto;max-width:72px;object-fit:contain}
 .cm h3{font-size:22px;font-weight:500;line-height:1.15}
 .cm .count{font-size:13px;color:var(--faint)}
 .cm .desc{font-size:13px;color:var(--dim);line-height:1.45}
@@ -376,7 +376,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
       <div class="facts fx">
         <div><strong>10+</strong>brands designed for</div>
         <div><strong>9:16</strong>vertical, made for live apps</div>
-        <div><!--@frames:count--><strong>3</strong><!--/@frames:count-->live frames in this portfolio</div>
+        <div><!--@frames:count--><strong>7</strong><!--/@frames:count-->live frames in this portfolio</div>
       </div>
     </div>
   </section>
@@ -413,6 +413,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
       <img class="sq" src="media/logos/viva.png" alt="VIVA Cosmetics">
       <img src="media/logos/red-a.png" alt="Red-A">
       <img src="media/logos/ultra-sakti.png" alt="PT Ultra Sakti">
+      <img src="media/logos/freshcare.png" alt="FreshCare">
       <img class="sq" src="media/logos/fresh-living.png" alt="Fresh Living by FreshCare">
       <img src="media/logos/madu-tj.png" alt="Madu TJ">
       <img class="sq" src="media/logos/hotin-cream.png" alt="Hotin Cream">
@@ -437,20 +438,24 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
           <div class="carousel" id="car">
             <div class="bgblur" id="car-bg"></div>
             <!--@frames:carousel--><div class="cinfo" id="cinfo" aria-live="polite">
-              <span class="cnum" id="c-num">01 / 03</span>
-              <span class="clogo"><img id="c-logo" src="media/logos/viva.png" alt="VIVA Cosmetics" class="sq"></span>
-              <b id="c-brand">VIVA Cosmetics</b>
+              <span class="cnum" id="c-num">01 / 07</span>
+              <span class="clogo"><img id="c-logo" src="media/logos/freshcare.png" alt="FreshCare"></span>
+              <b id="c-brand">FreshCare</b>
               <small id="c-camp">Payday, November 2026</small>
-              <span class="ttags" id="c-tags"><span>Payday sale</span><span>Animated scene</span><span>Bundle 149K</span></span>
+              <span class="ttags" id="c-tags"><span>Payday sale</span><span>Floating products</span><span>Brand ambassador</span></span>
             </div>
             <div class="slides">
-              <img class="on" src="media/viva-payday.jpg" alt="VIVA Cosmetics Payday drive frame">
+              <img class="on" src="media/freshcare-payday.jpg" alt="FreshCare “Fresh Payday, Fresh Every Day!” frame">
+              <img src="media/hotin-payday.jpg" alt="Hotin Cream “Promo Hangat Pas Gajian!” frame">
+              <img src="media/mywell-payday.jpg" alt="MyWell “Gajian Hepi, Sehat Setiap Hari” frame">
+              <img src="media/madutj-payday.jpg" alt="Madu TJ “Manisnya Hari Gajian” frame">
+              <img src="media/viva-payday.jpg" alt="VIVA Cosmetics Payday drive frame">
               <img src="media/viva-frame-1.jpg" alt="VIVA Cosmetics “Merdeka Dari Kulit Kusam” frame">
               <img src="media/reda-1111.jpg" alt="Red-A 11.11 Beauty Flash Sale frame">
             </div>
             <button class="carr l" id="car-prev" aria-label="Previous frame">‹</button>
             <button class="carr r" id="car-next" aria-label="Next frame">›</button>
-            <div class="dots" id="car-dots"><button class="on" aria-label="Frame 1"></button><button aria-label="Frame 2"></button><button aria-label="Frame 3"></button></div><!--/@frames:carousel-->
+            <div class="dots" id="car-dots"><button class="on" aria-label="Frame 1"></button><button aria-label="Frame 2"></button><button aria-label="Frame 3"></button><button aria-label="Frame 4"></button><button aria-label="Frame 5"></button><button aria-label="Frame 6"></button><button aria-label="Frame 7"></button></div><!--/@frames:carousel-->
           </div>
         </div>
         <div class="bcard fx">
@@ -476,6 +481,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
       <h2 class="title" id="t-work" data-words>Peek into the <span class="serif">frames</span></h2>
       <div class="chips fx" role="group" aria-label="Filter frames by brand">
         <!--@frames:chips--><button class="chip" data-filter="all" aria-pressed="true">All frames</button>
+        <button class="chip" data-filter="ultra-sakti" aria-pressed="false">PT Ultra Sakti</button>
         <button class="chip" data-filter="viva" aria-pressed="false">VIVA Cosmetics</button>
         <button class="chip" data-filter="reda" aria-pressed="false">Red-A</button><!--/@frames:chips-->
       </div>
@@ -484,7 +490,47 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
         <input id="q" type="search" placeholder="Search: payday, 11.11, price card…" autocomplete="off" aria-label="Search frames">
       </label>
       <div class="cgrid" id="cgrid">
-        <!--@frames:cards--><button class="ccard fx" data-open="0" data-brand="viva" data-kw="viva cosmetics payday november 2026 car convertible paket kulit selembut mawar 149k bundle animated" aria-label="Watch VIVA Cosmetics Payday drive frame">
+        <!--@frames:cards--><button class="ccard fx" data-open="0" data-brand="ultra-sakti" data-kw="freshcare fresh care pt ultra sakti payday november 2026 pool swim ring sakura agnez mo teens vapobalm minyak angin" aria-label="Watch FreshCare “Fresh Payday, Fresh Every Day!” frame">
+          <img src="media/freshcare-payday.jpg" alt="" loading="lazy"><video data-key="freshcare-payday" muted loop playsinline preload="none"></video>
+          <span class="cm">
+            <span class="brand"><img src="media/logos/freshcare.png" alt="">FreshCare · Payday, November 2026</span>
+            <h3>“Fresh Payday, Fresh Every Day!” frame</h3>
+            <span class="desc">A pool scene with FreshCare products floating on swim rings, sakura flowers and brand ambassador Agnez Mo, under the line “Gajian Cair, Segarnya Ngalir”.</span>
+            <span class="ttags"><span>Payday sale</span><span>Floating products</span><span>Brand ambassador</span></span>
+            <span class="count">0:44 preview</span>
+          </span>
+        </button>
+        <button class="ccard fx" data-open="1" data-brand="ultra-sakti" data-kw="hotin cream hot in pt ultra sakti payday november 2026 promo hangat gajian tvc hot spray koyo buy 1 get 1 25k" aria-label="Watch Hotin Cream “Promo Hangat Pas Gajian!” frame">
+          <img src="media/hotin-payday.jpg" alt="" loading="lazy"><video data-key="hotin-payday" muted loop playsinline preload="none"></video>
+          <span class="cm">
+            <span class="brand"><img src="media/logos/hotin-cream.png" alt="">Hotin Cream · Payday, November 2026</span>
+            <h3>“Promo Hangat Pas Gajian!” frame</h3>
+            <span class="desc">A red-and-white showroom with the brand TVC playing on a wall screen, a spotlighted Hotin Cream tube and a Buy 1 Get 1 card: Hot Spray plus Koyo for 25K.</span>
+            <span class="ttags"><span>Payday sale</span><span>TVC wall screen</span><span>Buy 1 Get 1 25K</span></span>
+            <span class="count">0:45 preview</span>
+          </span>
+        </button>
+        <button class="ccard fx" data-open="2" data-brand="ultra-sakti" data-kw="mywell maywell welmove omeheart pt ultra sakti payday november 2026 gajian hepi vitamin d3 door 62k bundle" aria-label="Watch MyWell “Gajian Hepi, Sehat Setiap Hari” frame">
+          <img src="media/mywell-payday.jpg" alt="" loading="lazy"><video data-key="mywell-payday" muted loop playsinline preload="none"></video>
+          <span class="cm">
+            <span class="brand"><img src="media/logos/mywell.png" alt="">MyWell · Payday, November 2026</span>
+            <h3>“Gajian Hepi, Sehat Setiap Hari” frame</h3>
+            <span class="desc">A soft-blue room with flying money, a door that opens on the hero Vitamin D3 bottle and a shelf of MyWell and Welmove products, plus a 3-pack Vitamin D3 deal at 62K.</span>
+            <span class="ttags"><span>Payday sale</span><span>Door reveal</span><span>Bundle 62K</span></span>
+            <span class="count">0:40 preview</span>
+          </span>
+        </button>
+        <button class="ccard fx" data-open="3" data-brand="ultra-sakti" data-kw="madu tj honey tresno joyo pt ultra sakti payday november 2026 manisnya hari gajian playground characters podium 42k 137k" aria-label="Watch Madu TJ “Manisnya Hari Gajian” frame">
+          <img src="media/madutj-payday.jpg" alt="" loading="lazy"><video data-key="madutj-payday" muted loop playsinline preload="none"></video>
+          <span class="cm">
+            <span class="brand"><img src="media/logos/madu-tj.png" alt="">Madu TJ · Payday, November 2026</span>
+            <h3>“Manisnya Hari Gajian” frame</h3>
+            <span class="desc">A sunny honey playground where animated Madu TJ bottles swing and slide, with a golden podium of best sellers and price tags from 42K to 137K.</span>
+            <span class="ttags"><span>Payday sale</span><span>Animated characters</span><span>4 price tags</span></span>
+            <span class="count">0:25 preview</span>
+          </span>
+        </button>
+        <button class="ccard fx" data-open="4" data-brand="viva" data-kw="viva cosmetics payday november 2026 car convertible paket kulit selembut mawar 149k bundle animated" aria-label="Watch VIVA Cosmetics Payday drive frame">
           <img src="media/viva-payday.jpg" alt="" loading="lazy"><video data-key="viva-payday" muted loop playsinline preload="none"></video>
           <span class="cm">
             <span class="brand"><img src="media/logos/viva.png" alt="">VIVA Cosmetics · Payday, November 2026</span>
@@ -494,7 +540,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
             <span class="count">0:19 preview</span>
           </span>
         </button>
-        <button class="ccard fx" data-open="1" data-brand="viva" data-kw="viva cosmetics hari pahlawan heroes day merdeka kulit kusam skin food cream laila cleanser 58k 53k price card shelf" aria-label="Watch VIVA Cosmetics “Merdeka Dari Kulit Kusam” frame">
+        <button class="ccard fx" data-open="5" data-brand="viva" data-kw="viva cosmetics hari pahlawan heroes day merdeka kulit kusam skin food cream laila cleanser 58k 53k price card shelf" aria-label="Watch VIVA Cosmetics “Merdeka Dari Kulit Kusam” frame">
           <img src="media/viva-frame-1.jpg" alt="" loading="lazy"><video data-key="viva-frame-1" muted loop playsinline preload="none"></video>
           <span class="cm">
             <span class="brand"><img src="media/logos/viva.png" alt="">VIVA Cosmetics · Hari Pahlawan · “Merdeka Dari Kulit Kusam”</span>
@@ -504,7 +550,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
             <span class="count">0:10 preview</span>
           </span>
         </button>
-        <button class="ccard fx" data-open="2" data-brand="reda" data-kw="red-a reda 11.11 beauty flash sale compact powder facial foam bebas ongkir halal bpom trust" aria-label="Watch Red-A 11.11 Beauty Flash Sale frame">
+        <button class="ccard fx" data-open="6" data-brand="reda" data-kw="red-a reda 11.11 beauty flash sale compact powder facial foam bebas ongkir halal bpom trust" aria-label="Watch Red-A 11.11 Beauty Flash Sale frame">
           <img src="media/reda-1111.jpg" alt="" loading="lazy"><video data-key="reda-1111" muted loop playsinline preload="none"></video>
           <span class="cm">
             <span class="brand"><img src="media/logos/red-a.png" alt="">Red-A · 11.11 Beauty Flash Sale</span>
@@ -518,6 +564,26 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
       </div>
 
       <!--@frames:results--><div class="results">
+        <div class="res fx">
+          <h3>FreshCare · Payday, November 2026</h3>
+          <dl><dt>Campaign</dt><dd>Payday, November 2026</dd><dt>Format</dt><dd>9:16 animated live frame</dd></dl>
+          <ul><li>Pool scene with products floating on swim rings</li><li>Animated payday headline “Fresh Payday, Fresh Every Day!”</li><li>Ambassador cut-out plus free shipping, halal and BPOM badges</li></ul>
+        </div>
+        <div class="res fx">
+          <h3>Hotin Cream · Payday, November 2026</h3>
+          <dl><dt>Campaign</dt><dd>Payday, November 2026</dd><dt>Format</dt><dd>9:16 live frame with video wall</dd></dl>
+          <ul><li>Showroom set with the brand TVC on a wall screen</li><li>Spotlight display for the hero tube</li><li>Buy 1 Get 1 price card plus free shipping, halal and BPOM badges</li></ul>
+        </div>
+        <div class="res fx">
+          <h3>MyWell · Payday, November 2026</h3>
+          <dl><dt>Campaign</dt><dd>Payday, November 2026</dd><dt>Format</dt><dd>9:16 animated live frame</dd></dl>
+          <ul><li>Door that opens to reveal the hero product</li><li>Product shelf for MyWell and Welmove</li><li>3-pack Vitamin D3 bundle card plus free shipping, halal and BPOM badges</li></ul>
+        </div>
+        <div class="res fx">
+          <h3>Madu TJ · Payday, November 2026</h3>
+          <dl><dt>Campaign</dt><dd>Payday, November 2026</dd><dt>Format</dt><dd>9:16 animated live frame</dd></dl>
+          <ul><li>Playground scene with animated honey bottle characters</li><li>Golden podium for the product line-up</li><li>Price tags plus free shipping, halal and BPOM badges</li></ul>
+        </div>
         <div class="res fx">
           <h3>VIVA Cosmetics · Payday, November 2026</h3>
           <dl><dt>Campaign</dt><dd>Payday, November 2026</dd><dt>Format</dt><dd>9:16 animated live frame</dd></dl>
@@ -581,11 +647,13 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
       </div>
       <div class="exp">
         <div class="fx"><h3>Live streaming design projects</h3><div class="pills main"><span>Fav Beauty</span><span>VIVA Cosmetics</span><span>Red-A</span><span>PT Ultra Sakti</span></div></div>
-        <div class="fx"><h3>Brand work</h3><div class="pills"><span>FreshCare</span><span>Madu TJ</span><span>Maywell</span><span>Hotin Cream</span><span>Secret Garden</span><span>Bebio</span><span>and more</span></div></div>
+        <div class="fx"><h3>PT Ultra Sakti brands</h3><div class="pills"><span>FreshCare</span><span>Madu TJ</span><span>Hotin Cream</span><span>Tresno Joyo</span><span>TJ Joybee</span><span>MyWell</span><span>Welmove</span><span>Om3heart</span><span>Fitbes</span><span>Fresh Living</span><span>Bebio</span></div></div>
+        <div class="fx"><h3>Other brand work</h3><div class="pills"><span>Secret Garden</span><span>and more</span></div></div>
         <div class="fx"><h3>Clients</h3><div class="clientlogos">
           <span><img class="sq" src="media/logos/viva.png" alt="VIVA Cosmetics"></span>
           <span><img src="media/logos/red-a.png" alt="Red-A"></span>
           <span><img src="media/logos/ultra-sakti.png" alt="PT Ultra Sakti"></span>
+          <span><img src="media/logos/freshcare.png" alt="FreshCare"></span>
           <span><img class="sq" src="media/logos/fresh-living.png" alt="Fresh Living by FreshCare"></span>
           <span><img src="media/logos/madu-tj.png" alt="Madu TJ"></span>
           <span><img class="sq" src="media/logos/hotin-cream.png" alt="Hotin Cream"></span>
@@ -714,6 +782,10 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
        full    : video kualitas penuh + suara untuk pemutar besar
   ==================================================== */
   /*@frames:videos*/const VIDEOS = {
+    "freshcare-payday": { preview: "media/preview/freshcare-payday.mp4", full: "media/freshcare-payday.mp4" },
+    "hotin-payday": { preview: "media/preview/hotin-payday.mp4", full: "media/hotin-payday.mp4" },
+    "mywell-payday": { preview: "media/preview/mywell-payday.mp4", full: "media/mywell-payday.mp4" },
+    "madutj-payday": { preview: "media/preview/madutj-payday.mp4", full: "media/madutj-payday.mp4" },
     "viva-payday": { preview: "media/preview/viva-payday.mp4", full: "media/viva-payday.mp4" },
     "viva-frame-1": { preview: "media/preview/viva-frame-1.mp4", full: "media/viva-frame-1.mp4" },
     "reda-1111": { preview: "media/preview/reda-1111.mp4", full: "media/reda-1111.mp4" }
@@ -721,7 +793,7 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
 
   /* ---------- 9:16 tiles ---------- */
   const T = [];
-  /*@frames:tiles*/["viva-payday", "viva-frame-1", "reda-1111"].forEach(k => { for (let i=0;i<8;i++) T.push(`media/ptiles/${k}-${i}.jpg`); });/*/@frames:tiles*/
+  /*@frames:tiles*/["freshcare-payday", "hotin-payday", "mywell-payday", "madutj-payday", "viva-payday", "viva-frame-1", "reda-1111"].forEach(k => { for (let i=0;i<8;i++) T.push(`media/ptiles/${k}-${i}.jpg`); });/*/@frames:tiles*/
   const shuffle = (arr, seed) => arr.map((v,i) => [v, Math.abs(Math.sin(i*12.9898 + seed)*43758.5453) % 1]).sort((a,b) => a[1]-b[1]).map(x => x[0]);
   const imgs = list => list.map(s => `<img src="${s}" alt="" loading="lazy" decoding="async">`).join('');
   $$('[data-row]').forEach((tr, i) => { const g = `<div class="mgroup">${imgs(shuffle(T, i+1).slice(0, 14))}</div>`; tr.innerHTML = g + g; });
@@ -866,6 +938,10 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
   /* ---------- carousel ---------- */
   const slides = $$('#car .slides img'), dots = $$('#car-dots button'), cbg = $('#car-bg'); let ci = 0, ctimer;
   /*@frames:clients*/const CLIENTS = [
+    {"logo": "media/logos/freshcare.png", "sq": false, "brand": "FreshCare", "camp": "Payday, November 2026", "tags": ["Payday sale", "Floating products", "Brand ambassador"]},
+    {"logo": "media/logos/hotin-cream.png", "sq": true, "brand": "Hotin Cream", "camp": "Payday, November 2026", "tags": ["Payday sale", "TVC wall screen", "Buy 1 Get 1 25K"]},
+    {"logo": "media/logos/mywell.png", "sq": false, "brand": "MyWell", "camp": "Payday, November 2026", "tags": ["Payday sale", "Door reveal", "Bundle 62K"]},
+    {"logo": "media/logos/madu-tj.png", "sq": false, "brand": "Madu TJ", "camp": "Payday, November 2026", "tags": ["Payday sale", "Animated characters", "4 price tags"]},
     {"logo": "media/logos/viva.png", "sq": true, "brand": "VIVA Cosmetics", "camp": "Payday, November 2026", "tags": ["Payday sale", "Animated scene", "Bundle 149K"]},
     {"logo": "media/logos/viva.png", "sq": true, "brand": "VIVA Cosmetics", "camp": "Hari Pahlawan · “Merdeka Dari Kulit Kusam”", "tags": ["Heroes’ Day sale", "Product shelf", "2 price cards"]},
     {"logo": "media/logos/red-a.png", "sq": false, "brand": "Red-A", "camp": "11.11 Beauty Flash Sale", "tags": ["11.11 sale", "Product counter", "Trust badges"]}
@@ -923,6 +999,10 @@ footer{border-top:1px solid var(--line);margin-top:80px;padding-block:56px 120px
 
   /* ---------- modal player ---------- */
   /*@frames:modal*/const data = [
+    {"key": "freshcare-payday", "poster": "media/freshcare-payday.jpg", "title": "FreshCare, Payday, November 2026", "desc": "A pool scene with FreshCare products floating on swim rings, sakura flowers and brand ambassador Agnez Mo, under the line “Gajian Cair, Segarnya Ngalir”. 9:16, 0:44 preview."},
+    {"key": "hotin-payday", "poster": "media/hotin-payday.jpg", "title": "Hotin Cream, Payday, November 2026", "desc": "A red-and-white showroom with the brand TVC playing on a wall screen, a spotlighted Hotin Cream tube and a Buy 1 Get 1 card: Hot Spray plus Koyo for 25K. 9:16, 0:45 preview."},
+    {"key": "mywell-payday", "poster": "media/mywell-payday.jpg", "title": "MyWell, Payday, November 2026", "desc": "A soft-blue room with flying money, a door that opens on the hero Vitamin D3 bottle and a shelf of MyWell and Welmove products, plus a 3-pack Vitamin D3 deal at 62K. 9:16, 0:40 preview."},
+    {"key": "madutj-payday", "poster": "media/madutj-payday.jpg", "title": "Madu TJ, Payday, November 2026", "desc": "A sunny honey playground where animated Madu TJ bottles swing and slide, with a golden podium of best sellers and price tags from 42K to 137K. 9:16, 0:25 preview."},
     {"key": "viva-payday", "poster": "media/viva-payday.jpg", "title": "VIVA Cosmetics, Payday, November 2026", "desc": "The host sits in an animated red convertible on a bright city road, with floating products and one bundle card, “Paket Kulit Selembut Mawar”, held at the top. 9:16, 0:19 preview."},
     {"key": "viva-frame-1", "poster": "media/viva-frame-1.jpg", "title": "VIVA Cosmetics, Hari Pahlawan · “Merdeka Dari Kulit Kusam”", "desc": "A pink studio set with a product shelf, a hero tube on the left and two price cards, so Skin Food Cream and the Laila Cleanser bundle stay visible the whole session. 9:16, 0:10 preview."},
     {"key": "reda-1111", "poster": "media/reda-1111.jpg", "title": "Red-A, 11.11 Beauty Flash Sale", "desc": "A red boutique counter lined with compact powders, a looping product video on the side wall and a trust bar for free shipping, halal, extra promo and BPOM. 9:16, 0:35 preview."}

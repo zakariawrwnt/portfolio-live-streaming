@@ -1,10 +1,119 @@
 {
   "_doc": "Daftar frame di portfolio. Urutan = urutan tampil (terbaru di atas). Jalankan: python3 tools/build_frames.py",
   "groups": {
+    "ultra-sakti": "PT Ultra Sakti",
     "viva": "VIVA Cosmetics",
     "reda": "Red-A"
   },
   "frames": [
+    {
+      "key": "freshcare-payday",
+      "group": "ultra-sakti",
+      "brand": "FreshCare",
+      "logo": "media/logos/freshcare.png",
+      "logoSquare": false,
+      "campaign": "Payday, November 2026",
+      "title": "“Fresh Payday, Fresh Every Day!” frame",
+      "desc": "A pool scene with FreshCare products floating on swim rings, sakura flowers and brand ambassador Agnez Mo, under the line “Gajian Cair, Segarnya Ngalir”.",
+      "tags": [
+        "Payday sale",
+        "Floating products",
+        "Brand ambassador"
+      ],
+      "kw": "freshcare fresh care pt ultra sakti payday november 2026 pool swim ring sakura agnez mo teens vapobalm minyak angin",
+      "duration": "0:44",
+      "format": "9:16 animated live frame",
+      "bullets": [
+        "Pool scene with products floating on swim rings",
+        "Animated payday headline “Fresh Payday, Fresh Every Day!”",
+        "Ambassador cut-out plus free shipping, halal and BPOM badges"
+      ],
+      "source": {
+        "tracker": "nov26-10",
+        "local": "FRESH CARE/FRAME PAYDAY FRESH CARE NOVEMBER 2026.mp4"
+      }
+    },
+    {
+      "key": "hotin-payday",
+      "group": "ultra-sakti",
+      "brand": "Hotin Cream",
+      "logo": "media/logos/hotin-cream.png",
+      "logoSquare": true,
+      "campaign": "Payday, November 2026",
+      "title": "“Promo Hangat Pas Gajian!” frame",
+      "desc": "A red-and-white showroom with the brand TVC playing on a wall screen, a spotlighted Hotin Cream tube and a Buy 1 Get 1 card: Hot Spray plus Koyo for 25K.",
+      "tags": [
+        "Payday sale",
+        "TVC wall screen",
+        "Buy 1 Get 1 25K"
+      ],
+      "kw": "hotin cream hot in pt ultra sakti payday november 2026 promo hangat gajian tvc hot spray koyo buy 1 get 1 25k",
+      "duration": "0:45",
+      "format": "9:16 live frame with video wall",
+      "bullets": [
+        "Showroom set with the brand TVC on a wall screen",
+        "Spotlight display for the hero tube",
+        "Buy 1 Get 1 price card plus free shipping, halal and BPOM badges"
+      ],
+      "source": {
+        "tracker": "nov26-09",
+        "local": "hotin/FA/PREVIEW HOTIN CREAM PAYDAY NOV 2026.mp4"
+      }
+    },
+    {
+      "key": "mywell-payday",
+      "group": "ultra-sakti",
+      "brand": "MyWell",
+      "logo": "media/logos/mywell.png",
+      "logoSquare": false,
+      "campaign": "Payday, November 2026",
+      "title": "“Gajian Hepi, Sehat Setiap Hari” frame",
+      "desc": "A soft-blue room with flying money, a door that opens on the hero Vitamin D3 bottle and a shelf of MyWell and Welmove products, plus a 3-pack Vitamin D3 deal at 62K.",
+      "tags": [
+        "Payday sale",
+        "Door reveal",
+        "Bundle 62K"
+      ],
+      "kw": "mywell maywell welmove omeheart pt ultra sakti payday november 2026 gajian hepi vitamin d3 door 62k bundle",
+      "duration": "0:40",
+      "format": "9:16 animated live frame",
+      "bullets": [
+        "Door that opens to reveal the hero product",
+        "Product shelf for MyWell and Welmove",
+        "3-pack Vitamin D3 bundle card plus free shipping, halal and BPOM badges"
+      ],
+      "source": {
+        "tracker": "nov26-08",
+        "local": "MYWELL/FA/PREVIEW FRAME PAYDAY MYWELL rev.mp4"
+      }
+    },
+    {
+      "key": "madutj-payday",
+      "group": "ultra-sakti",
+      "brand": "Madu TJ",
+      "logo": "media/logos/madu-tj.png",
+      "logoSquare": false,
+      "campaign": "Payday, November 2026",
+      "title": "“Manisnya Hari Gajian” frame",
+      "desc": "A sunny honey playground where animated Madu TJ bottles swing and slide, with a golden podium of best sellers and price tags from 42K to 137K.",
+      "tags": [
+        "Payday sale",
+        "Animated characters",
+        "4 price tags"
+      ],
+      "kw": "madu tj honey tresno joyo pt ultra sakti payday november 2026 manisnya hari gajian playground characters podium 42k 137k",
+      "duration": "0:25",
+      "format": "9:16 animated live frame",
+      "bullets": [
+        "Playground scene with animated honey bottle characters",
+        "Golden podium for the product line-up",
+        "Price tags plus free shipping, halal and BPOM badges"
+      ],
+      "source": {
+        "tracker": "nov26-07",
+        "local": "MADU TJ/FA/PREVIEW FRAME MADU TJ PAYDAY NOV.mp4"
+      }
+    },
     {
       "key": "viva-payday",
       "group": "viva",
@@ -14,12 +123,22 @@
       "campaign": "Payday, November 2026",
       "title": "Payday drive frame",
       "desc": "The host sits in an animated red convertible on a bright city road, with floating products and one bundle card, “Paket Kulit Selembut Mawar”, held at the top.",
-      "tags": ["Payday sale", "Animated scene", "Bundle 149K"],
+      "tags": [
+        "Payday sale",
+        "Animated scene",
+        "Bundle 149K"
+      ],
       "kw": "viva cosmetics payday november 2026 car convertible paket kulit selembut mawar 149k bundle animated",
       "duration": "0:19",
       "format": "9:16 animated live frame",
-      "bullets": ["Animated convertible scene for the host", "Floating product animation", "Bundle price card “Paket Kulit Selembut Mawar”"],
-      "source": {"tracker": "nov26-04"}
+      "bullets": [
+        "Animated convertible scene for the host",
+        "Floating product animation",
+        "Bundle price card “Paket Kulit Selembut Mawar”"
+      ],
+      "source": {
+        "tracker": "nov26-04"
+      }
     },
     {
       "key": "viva-frame-1",
@@ -30,12 +149,22 @@
       "campaign": "Hari Pahlawan · “Merdeka Dari Kulit Kusam”",
       "title": "“Merdeka Dari Kulit Kusam” frame",
       "desc": "A pink studio set with a product shelf, a hero tube on the left and two price cards, so Skin Food Cream and the Laila Cleanser bundle stay visible the whole session.",
-      "tags": ["Heroes’ Day sale", "Product shelf", "2 price cards"],
+      "tags": [
+        "Heroes’ Day sale",
+        "Product shelf",
+        "2 price cards"
+      ],
       "kw": "viva cosmetics hari pahlawan heroes day merdeka kulit kusam skin food cream laila cleanser 58k 53k price card shelf",
       "duration": "0:10",
       "format": "9:16 live frame",
-      "bullets": ["Pink studio set with product shelf", "Hero product tube placement", "Two price cards for Skin Food Cream and Laila Cleanser"],
-      "source": {"tracker": "nov26-01"}
+      "bullets": [
+        "Pink studio set with product shelf",
+        "Hero product tube placement",
+        "Two price cards for Skin Food Cream and Laila Cleanser"
+      ],
+      "source": {
+        "tracker": "nov26-01"
+      }
     },
     {
       "key": "reda-1111",
@@ -46,12 +175,22 @@
       "campaign": "11.11 Beauty Flash Sale",
       "title": "11.11 Beauty Flash Sale frame",
       "desc": "A red boutique counter lined with compact powders, a looping product video on the side wall and a trust bar for free shipping, halal, extra promo and BPOM.",
-      "tags": ["11.11 sale", "Product counter", "Trust badges"],
+      "tags": [
+        "11.11 sale",
+        "Product counter",
+        "Trust badges"
+      ],
       "kw": "red-a reda 11.11 beauty flash sale compact powder facial foam bebas ongkir halal bpom trust",
       "duration": "0:35",
       "format": "9:16 live frame with motion",
-      "bullets": ["Boutique counter lined with compact powders", "Looping product video on the side wall", "Trust bar: free shipping, halal, extra promo, BPOM"],
-      "source": {"tracker": "nov26-02"}
+      "bullets": [
+        "Boutique counter lined with compact powders",
+        "Looping product video on the side wall",
+        "Trust bar: free shipping, halal, extra promo, BPOM"
+      ],
+      "source": {
+        "tracker": "nov26-02"
+      }
     }
   ]
 }
